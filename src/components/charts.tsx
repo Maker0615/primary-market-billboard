@@ -32,14 +32,22 @@ export function QuarterlyChart({ data }: { data: QuarterPoint[] }) {
       {[0.25, 0.5, 0.75, 1].map((f) => (
         <line key={f} x1={PL} x2={W - PR} y1={PT + ih * (1 - f)} y2={PT + ih * (1 - f)} stroke={HAIRLINE} strokeWidth="0.6" />
       ))}
-      {data.map((d, i) => (
-        <g key={d.q}>
-          <rect x={x(i) - bw / 2} y={yC(d.count)} width={bw} height={PT + ih - yC(d.count)}
-            fill={d.count ? GOLD : 'transparent'} opacity={0.9} />
-          {d.count > 0 && <text x={x(i)} y={yC(d.count) - 5} textAnchor="middle" fontSize="10" fill={IVORY}>{d.count}</text>}
-          <text x={x(i)} y={H - 10} textAnchor="middle" fontSize="9.5" fill={GRAY}>{d.q}</text>
-        </g>
-      ))}
+      {data.map((d, i) => {
+        const bh = PT + ih - yC(d.count);
+        return (
+          <g key={d.q}>
+            <rect x={x(i) - bw / 2} y={yC(d.count)} width={bw} height={bh}
+              fill={d.count ? GOLD : 'transparent'} opacity={0.9} />
+            {d.count > 0 && bh > 20 && (
+              <text x={x(i)} y={yC(d.count) + bh / 2 + 4} textAnchor="middle" fontSize="11" fontWeight="600" fill="#FFFFFF">{d.count}</text>
+            )}
+            {d.count > 0 && bh <= 20 && (
+              <text x={x(i)} y={yC(d.count) - 5} textAnchor="middle" fontSize="10" fill={IVORY}>{d.count}</text>
+            )}
+            <text x={x(i)} y={H - 10} textAnchor="middle" fontSize="9.5" fill={GRAY}>{d.q}</text>
+          </g>
+        );
+      })}
       <path d={line} fill="none" stroke={IVORY} strokeWidth="1.4" />
       {data.map((d, i) => (
         <g key={i}>
