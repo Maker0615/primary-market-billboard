@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { DealsPanel, StatsPanel, DetailPanel, DataSourcePanel } from './components/panels';
-import { DEALS, DATA_ASOF, type Deal } from './lib/universe';
+import { DATA_ASOF, type Deal } from './lib/universe';
 
 export default function App() {
   const [selDeal, setSelDeal] = useState<Deal | null>(null);
@@ -100,7 +100,6 @@ export default function App() {
       {/* ── 状态栏 ── */}
       <footer className="statusbar">
         <span className="status-dot">●</span>
-        <span>样本 {DEALS.length} 笔</span>
         <span>更新 {DATA_ASOF} · 每周全网汇总</span>
         <span className="status-right">
           {clock.toLocaleTimeString('zh-CN', { hour12: false })} · 非投资建议
