@@ -1,12 +1,13 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // 新质生产力一级市场交易样本（美/中）
 // 数据来源：每笔交易附公开报道/官方公告链接；金额与估值以链接披露口径为准
-// 更新机制：每日 10:00（北京时间）GitHub Actions 全网检索汇总刷新，asOf 为数据截止日期
+// 数据层：每笔交易一个 JSON 文件（src/lib/deals/d{id}.json），周度更新只新增小文件
 // ─────────────────────────────────────────────────────────────────────────────
 
-import data from './deals.json';
+const metaGlob = import.meta.glob('./deals/meta.json', { eager: true }) as Record<string, { default: { asOf: string } }>;
+const dealGlob = import.meta.glob('./deals/d*.json', { eager: true }) as Record<string, { default: Deal }>;
 
-export const DATA_ASOF: string = data.asOf;
+export const DATA_ASOF: string = metaGlob['./deals/meta.json'].default.asOf;
 
 export type Theme = '生物科技' | 'AI制药' | 'AI4S' | 'AI4AI' | '大健康' | '脑机接口';
 
@@ -30,7 +31,9 @@ export interface Deal {
 
 export const CNY_PER_USD = 7.2;
 
-export const DEALS: Deal[] = data.deals as Deal[];
+export const DEALS: Deal[] = Object.values(dealGlob)
+  .map((m) => m.default)
+  .sort((a, b) => a.id - b.id);
 
 // 本轮估值：公开披露优先，否则按 融资额 ÷ 10% 股比稀释 推算投后
 export function dealValuation(d: Deal): { text: string; short: string; estimated: boolean } {

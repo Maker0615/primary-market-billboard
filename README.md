@@ -11,10 +11,9 @@
 
 ## 数据与自动更新
 
-- 数据文件：`src/lib/deals.json`（`asOf` 为数据截止日期）
-- 每日 10:00（北京时间）由 GitHub Actions 触发 `scripts/daily-update.mjs`：调用 Kimi API（内置联网检索）捕捉新交易并复核既有样本 → 严格 JSON 校验合并 → 构建把关 → 自动提交并触发 Cloudflare Pages 重建部署
-- Secrets：`MOONSHOT_API_KEY`（必需，开放平台 key 或 Kimi Code key 均可）；`CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`（部署）
-- Variables（可选）：`MOONSHOT_BASE_URL`（Kimi Code key 设为 `https://api.kimi.com/coding/v1`）、`MOONSHOT_MODEL`
+- 数据文件：`src/lib/deals/`（每笔交易一个文件 d{id}.json，`meta.json` 记录数据截止日期）
+- 每周六 09:00（北京时间）由 Kimi 侧全量更新：全网检索捕捉新交易并复核既有样本 → 构建把关 → 推送 main → 触发 Cloudflare Pages 重建部署
+- 备用链路：GitHub Actions（根目录 `daily-update.yml.example`，复制为 `.github/workflows/daily-update.yml` 启用；Secrets：`MOONSHOT_API_KEY`，Variables：`MOONSHOT_BASE_URL`/`MOONSHOT_MODEL`；`CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` 用于部署）
 - 注意：Kimi Code key 官方使用范围限定为编码工具；coding 端点若无内置联网检索，脚本会直接失败（宁可断更不产出无源数据）
 
 ## 技术栈
