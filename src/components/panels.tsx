@@ -13,7 +13,8 @@ export function StatsPanel() {
     return (t: string) => DONUT_COLORS[Math.max(0, themeOrder.indexOf(t)) % DONUT_COLORS.length];
   }, [themeOrder]);
   const roundMix = useMemo(() => roundThemeMix(themeOrder), [themeOrder]);
-  const investors = useMemo(() => topInvestors(10), []);
+  const [invAll, setInvAll] = useState(false);
+  const investors = useMemo(() => topInvestors(invAll ? 200 : 10), [invAll]);
   const total = totalUSDm();
   return (
     <div className="stats-grid">
@@ -29,9 +30,14 @@ export function StatsPanel() {
       <ChartCard no="03" title="题材分布" sub="悬停放大 · 与图例联动">
         <ThemeDonut data={themes} colorOf={colorOf} />
       </ChartCard>
-      <ChartCard no="04" title="活跃投资机构" sub="按参与样本交易笔数排名 TOP10 · 点击进官网">
+      <ChartCard no="04" title="活跃投资机构" sub={`按参与样本交易笔数排名${invAll ? '（全部）' : ' TOP10'} · 点击进官网`}>
         <HBars data={investors} labelW={150} />
-        <div className="chart-foot">仅统计已披露机构 · 同一机构跨多笔重复计数</div>
+        <div className="chart-foot" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <span>仅统计已披露机构 · 同一机构跨多笔重复计数</span>
+          <button className="more-btn" onClick={() => setInvAll(!invAll)}>
+            {invAll ? '缩小 −' : '更多 +'}
+          </button>
+        </div>
       </ChartCard>
     </div>
   );
@@ -45,12 +51,21 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
   filter: string; setFilter: (f: string) => void;
 }) {
   const [mkt, setMkt] = useState<'全部' | 'CN' | 'US'>('全部');
+  const [showAll, setShowAll] = useState(false);
+  // 默认只显示近一年（按当前日期滚动）
+  const cutoff = useMemo(() => {
+    const d = new Date();
+    d.setFullYear(d.getFullYear() - 1);
+    return d.toISOString().slice(0, 10);
+  }, []);
   const rows = useMemo(() => {
     let r = [...DEALS].sort((a, b) => b.date.localeCompare(a.date));
     if (filter !== '全部') r = r.filter((d) => d.theme === filter);
     if (mkt !== '全部') r = r.filter((d) => d.mkt === mkt || d.mkt.includes(mkt));
+    if (!showAll) r = r.filter((d) => d.date >= cutoff);
     return r;
-  }, [filter, mkt]);
+  }, [filter, mkt, showAll, cutoff]);
+  const hiddenCount = useMemo(() => DEALS.filter((d) => d.date < cutoff).length, [cutoff]);
   const totalUSDmRows = rows.reduce((s, d) => s + d.amtUSDm, 0);
   return (
     <div className="panel">
@@ -76,7 +91,8 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
           const v = dealValuation(d);
           return (
             <div key={d.id} className={`trow ${selected === d.id ? 'trow-on' : ''}`} onClick={() => onSelect(d)}>
-              <span className="c-date" style={{ color: GRAY }}>{d.date}</span>
+              <span className="c-date d-full" style={{ color: GRAY }}>{d.date}</span>
+              <span className="c-date d-ym" style={{ color: GRAY }}>{d.date.slice(0, 7)}</span>
               <span className="c-co ellipsis" style={{ color: IVORY }}>{d.co}</span>
               <span className="c-mkt hide-sm" style={{ color: GRAY }}>{d.mkt}</span>
               <span className="c-round ellipsis" style={{ color: GOLD }}>{d.round}</span>
@@ -89,7 +105,14 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
           );
         })}
       </div>
-      <div className="panel-foot">* 估值为推算值（融资额÷10%股比稀释）· 点击查看机构 / 进展 / 来源链接</div>
+      <div className="panel-foot" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <span>* 估值为推算值（融资额÷10%股比稀释）· 点击查看机构 / 进展 / 来源链接</span>
+        {hiddenCount > 0 && (
+          <button className="more-btn" onClick={() => setShowAll(!showAll)}>
+            {showAll ? '缩小 −' : `更多（含 ${hiddenCount} 笔一年前）+`}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
@@ -130,6 +153,12 @@ export function DetailPanel({ deal }: { deal: Deal | null }) {
       <div className="dsec">
         <div className="dsec-label">项目方发展情况</div>
         <div className="dsec-body">{deal.progress}</div>
+        {deal.site && (
+          <div className="dsec-body" style={{ marginTop: 6 }}>
+            <span style={{ color: GOLD }}>▸ </span>
+            <a href={deal.site} target="_blank" rel="noreferrer" className="newslink">公司官网 ↗</a>
+          </div>
+        )}
       </div>
       <div className="dsec">
         <div className="dsec-label">数据来源链接</div>
@@ -187,7 +216,6 @@ export function DataSourcePanel() {
           <span style={{ color: GOLD }}>▸ </span>36氪 / 亿欧 / 新浪财经 / 新华报业 等
         </div>
       </div>
-      <div className="panel-foot">统计为演示快照 · 非投资建议</div>
     </div>
   );
 }
