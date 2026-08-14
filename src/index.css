@@ -51,8 +51,8 @@ body {
 }
 .brand-title {
   font-family: var(--serif);
-  font-size: 22px; font-weight: 500;
-  letter-spacing: 0.34em; color: var(--ivory);
+  font-size: 28px; font-weight: 500;
+  letter-spacing: 0.3em; color: var(--ivory);
 }
 .brand-sub { color: var(--gray); font-size: 11px; letter-spacing: 0.14em; margin-top: 4px; }
 .brand-date { color: var(--gold); }
@@ -122,6 +122,17 @@ body {
 .hbar-track-stack { display: flex; height: 6px; overflow: hidden; }
 .hbar-seg { display: block; height: 100%; transition: opacity 0.15s; }
 .hbar-seg:hover { opacity: 0.75; }
+
+/* 更多/缩小按钮 */
+.more-btn {
+  background: none; border: 1px solid var(--hairline); color: var(--gold);
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em;
+  padding: 3px 10px; cursor: pointer; transition: all 0.2s;
+}
+.more-btn:hover { border-color: var(--gold); background: rgba(201,168,106,0.08); }
+
+/* 日期双模式：桌面完整 / 移动端年月 */
+.d-ym { display: none; }
 
 /* 环形图联动 */
 .donut-li { cursor: pointer; padding: 2px 4px; margin: 0 -4px; transition: background 0.15s; }
@@ -272,12 +283,14 @@ body {
   .chart-sub { display: none; }
   .donut-wrap { flex-direction: column; align-items: flex-start; gap: 14px; }
 
-  /* 交易表：隐藏次级列 */
+  /* 交易表：隐藏次级列，日期改年月，轮次/金额自适应 */
   .hide-sm { display: none; }
-  .c-date { width: 82px; }
+  .d-full { display: none; }
+  .d-ym { display: inline; }
+  .c-date { width: 60px; }
   .c-co { flex: 1; width: auto; min-width: 0; }
-  .c-round { width: 64px; }
-  .c-amt { width: 76px; }
+  .c-round { width: auto; flex-shrink: 0; padding-right: 10px; max-width: 92px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .c-amt { width: auto; flex-shrink: 0; max-width: 96px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .tabs { gap: 14px; }
   .tabs-note { width: 100%; margin-left: 0; }
 
