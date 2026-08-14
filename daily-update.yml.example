@@ -1,4 +1,4 @@
-# 将此文件内容复制到 .github/workflows/daily-update.yml 即可启用每日自动更新
+# 将此文件内容复制为 .github/workflows/daily-update.yml 即可启用每日自动更新
 # （当前推送凭证无 workflow 写权限，需经 GitHub 网页端 Add file 或本地 git push 添加一次）
 
 name: daily-update
@@ -45,10 +45,13 @@ jobs:
             git push
           fi
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Pages（触发 Pages 拉取 main 重建部署）
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "未配置 CF secrets，跳过部署（若 Pages 已连接 GitHub 则会自动部署）"; exit 0; fi
-          npx wrangler pages deploy dist --project-name primary-market-billboard --branch main
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then echo "未配置 CF secrets，跳过部署"; exit 0; fi
+          curl -sf -X POST "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/primary-market-billboard/deployments" \
+            -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{"branch":"main"}' && echo "deploy triggered"
