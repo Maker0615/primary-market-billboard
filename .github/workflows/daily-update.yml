@@ -28,6 +28,8 @@ jobs:
       - name: Capture new deals (Kimi + web search)
         env:
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          MOONSHOT_BASE_URL: ${{ vars.MOONSHOT_BASE_URL }}
+          MOONSHOT_MODEL: ${{ vars.MOONSHOT_MODEL }}
         run: node scripts/daily-update.mjs
 
       - name: Build gate（数据变更必须能通过构建）
