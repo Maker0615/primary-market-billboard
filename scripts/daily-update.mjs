@@ -1,13 +1,15 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// 每日全量更新脚本（GitHub Actions 每日 10:00 北京时间触发）
+// 每周全量更新脚本（GitHub Actions 每周六 09:00 北京时间触发）
 // 流程：调用 Kimi API（内置 $web_search）全网检索 → 严格 JSON 校验 → 合并去重
-//       → 更新 asOf → 写回 src/lib/deals.json（构建在 CI 中把关，失败不提交）
+//       → 更新 asOf → 写回 src/lib/deals/（构建在 CI 中把关，失败不提交）
 // Secrets：MOONSHOT_API_KEY（必需；可填开放平台 key 或 Kimi Code key）
 // Variables：MOONSHOT_BASE_URL / MOONSHOT_MODEL（可选覆盖，见下）
 // ─────────────────────────────────────────────────────────────────────────────
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
 
-const DATA_PATH = 'src/lib/deals.json';
+// 数据层：每笔交易一个文件 src/lib/deals/d{id}.json + meta.json（asOf）
+const DATA_DIR = 'src/lib/deals';
 // 端点可通过仓库 Variables 覆盖：
 //   MOONSHOT_BASE_URL（默认开放平台 https://api.moonshot.cn/v1；
 //     若用 Kimi Code 订阅 key，设为 https://api.kimi.com/coding/v1，模型会被强制为 kimi-for-coding）
@@ -26,7 +28,18 @@ const todayCN = () =>
   new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Shanghai' });
 
 function readData() {
-  return JSON.parse(readFileSync(DATA_PATH, 'utf8'));
+  const files = readdirSync(DATA_DIR).filter((f) => /^d\d+\.json$/.test(f));
+  const deals = files.map((f) => JSON.parse(readFileSync(path.join(DATA_DIR, f), 'utf8')));
+  const meta = JSON.parse(readFileSync(path.join(DATA_DIR, 'meta.json'), 'utf8'));
+  return { deals, asOf: meta.asOf };
+}
+
+function writeDeal(deal) {
+  writeFileSync(path.join(DATA_DIR, `d${deal.id}.json`), JSON.stringify(deal) + '\n');
+}
+
+function writeMeta(asOf) {
+  writeFileSync(path.join(DATA_DIR, 'meta.json'), JSON.stringify({ asOf }) + '\n');
 }
 
 const SYSTEM_PROMPT = `你是一级市场融资交易的数据采集员。今天是 ${todayCN()}。
@@ -37,7 +50,7 @@ const SYSTEM_PROMPT = `你是一级市场融资交易的数据采集员。今天
 - 题材仅限：AI4S（AI for Science）、AI4AI（Agent 为主的 AI 应用，非基础设施）、AI制药、生物科技、大健康、脑机接口。不收 AI+/具身智能/AI基础设施，不收港股（HK）市场，不收 2025 年之前的交易
 - 轮次不限，但重点关注种子轮/天使轮/A轮早期交易
 - 每笔必须有可验证的公开报道/公告链接（中文交易优先 36氪/腾讯/新浪/网易/亿欧/微信公众号原文 mp.weixin.qq.com；海外交易用英文原始源；财新标注付费墙）
-- 信源渠道：网页公开报道、微信公众号（elsewhere别处发生、DeepTech深科技、BioTender 观测日志、36氪/投中/动脉网/医药魔方等，经搜狗微信检索）、Y Combinator 各批次名录、YZi Labs、Fierce Biotech 融资追踪、BioBucks、PR Newswire、Business Wire
+- 信源渠道：网页公开报道、微信公众号（elsewhere别处发生、DeepTech深科技、BioTender 观测日志、36氪/投中/动脉网/医药魔方等，经搜狗微信检索）、Y Combinator 各批次名录、YZi Labs、Fierce Biotech 融资追踪、BioBucks、PR Newswire、Business Wire、公司官方博客、SEC Form D、FinSMEs、PitchBook 档案、WSGR AI医疗交易周报
 - 宁缺毋滥：找不到可靠链接的交易一律不收
 
 输出：仅输出一个 JSON 对象，不要任何额外文字：
@@ -147,7 +160,9 @@ async function main() {
     const key = `${d.co.toLowerCase()}|${d.round}|${d.date}`;
     if (existing.has(key)) { console.log('× 重复，跳过:', d.co); continue; }
     existing.add(key);
-    data.deals.push({ id: nextId++, ...d });
+    const deal = { id: nextId++, ...d };
+    data.deals.push(deal);
+    writeDeal(deal);
     added++;
     console.log('✓ 新增:', d.co, d.round, d.amt);
   }
@@ -156,6 +171,7 @@ async function main() {
     const hit = data.deals.find((d) => d.co.toLowerCase().includes(String(u.co).toLowerCase()));
     if (hit && typeof u.progress === 'string' && u.progress.length > 10) {
       hit.progress = u.progress;
+      writeDeal(hit);
       progressed++;
       console.log('↻ 进展更新:', hit.co);
     }
@@ -166,13 +182,14 @@ async function main() {
     if (hit && ['amt', 'round', 'date', 'investors'].includes(c.field)) {
       console.log(`⚠ 修正 ${hit.co}.${c.field}: ${hit[c.field]} → ${c.value}（${c.reason}）`);
       hit[c.field] = c.value;
+      writeDeal(hit);
       corrected++;
     }
   }
 
   if (added + progressed + corrected > 0) {
     data.asOf = todayCN();
-    writeFileSync(DATA_PATH, JSON.stringify(data, null, 2) + '\n');
+    writeMeta(data.asOf);
     console.log(`完成：新增 ${added}，进展 ${progressed}，修正 ${corrected}，asOf=${data.asOf}`);
   } else {
     console.log('无变更。');

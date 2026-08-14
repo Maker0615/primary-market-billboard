@@ -1,12 +1,12 @@
-# 将此文件内容复制为 .github/workflows/daily-update.yml 即可启用每日自动更新
+# 将此文件内容复制为 .github/workflows/daily-update.yml 即可启用每周自动更新
 # （当前推送凭证无 workflow 写权限，需经 GitHub 网页端 Add file 或本地 git push 添加一次）
 
 name: daily-update
 
 on:
   schedule:
-    # 每日 10:00 北京时间 = 02:00 UTC
-    - cron: '0 2 * * *'
+    # 每周六 09:00 北京时间 = 01:00 UTC
+    - cron: '0 1 * * 6'
   workflow_dispatch: {}
 
 permissions:
@@ -28,6 +28,8 @@ jobs:
       - name: Capture new deals (Kimi + web search)
         env:
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
+          MOONSHOT_BASE_URL: ${{ vars.MOONSHOT_BASE_URL }}
+          MOONSHOT_MODEL: ${{ vars.MOONSHOT_MODEL }}
         run: node scripts/daily-update.mjs
 
       - name: Build gate（数据变更必须能通过构建）
@@ -37,11 +39,11 @@ jobs:
         run: |
           git config user.name "billboard-bot"
           git config user.email "billboard-bot@users.noreply.github.com"
-          git add src/lib/deals.json
+          git add src/lib/deals/
           if git diff --cached --quiet; then
             echo "no changes"
           else
-            git commit -m "data: daily update $(date +%F)"
+            git commit -m "data: weekly update $(date +%F)"
             git push
           fi
 
