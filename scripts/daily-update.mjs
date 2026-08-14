@@ -2,13 +2,23 @@
 // 每日全量更新脚本（GitHub Actions 每日 10:00 北京时间触发）
 // 流程：调用 Kimi API（内置 $web_search）全网检索 → 严格 JSON 校验 → 合并去重
 //       → 更新 asOf → 写回 src/lib/deals.json（构建在 CI 中把关，失败不提交）
-// 需要在仓库 Secrets 配置 MOONSHOT_API_KEY；未配置时安全跳过。
+// Secrets：MOONSHOT_API_KEY（必需；可填开放平台 key 或 Kimi Code key）
+// Variables：MOONSHOT_BASE_URL / MOONSHOT_MODEL（可选覆盖，见下）
 // ─────────────────────────────────────────────────────────────────────────────
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const DATA_PATH = 'src/lib/deals.json';
-const API_URL = 'https://api.moonshot.cn/v1/chat/completions';
-const MODEL = 'kimi-k2-0905-preview';
+// 端点可通过仓库 Variables 覆盖：
+//   MOONSHOT_BASE_URL（默认开放平台 https://api.moonshot.cn/v1；
+//     若用 Kimi Code 订阅 key，设为 https://api.kimi.com/coding/v1，模型会被强制为 kimi-for-coding）
+//   MOONSHOT_MODEL（默认 kimi-k2-0905-preview）
+// 注意：Kimi Code key 的使用范围官方限定为编码工具，用于本脚本存在权益受限风险，请自行权衡；
+//       且 coding 端点若不提供内置 $web_search，脚本会直接失败（宁可断更，不产出无源数据）。
+const BASE_URL = process.env.MOONSHOT_BASE_URL || 'https://api.moonshot.cn/v1';
+const API_URL = `${BASE_URL}/chat/completions`;
+const MODEL = BASE_URL.includes('coding')
+  ? 'kimi-for-coding'
+  : (process.env.MOONSHOT_MODEL || 'kimi-k2-0905-preview');
 const ALLOWED_THEMES = ['AI4S', 'AI4AI', 'AI制药', '生物科技', '大健康', '脑机接口'];
 const ALLOWED_MKT = ['CN', 'US', 'CN/US'];
 
@@ -67,7 +77,12 @@ async function callKimi(apiKey) {
     if (!msg) throw new Error('empty response');
     messages.push(msg);
     const calls = msg.tool_calls ?? [];
-    if (!calls.length) return msg.content ?? '';
+    if (!calls.length) {
+      const content = msg.content ?? '';
+      // 第一轮就无工具调用 = 端点未提供联网检索，拒绝继续（宁可断更，不产出无源数据）
+      if (i === 0) throw new Error('端点未触发 $web_search 联网检索，中止本次更新');
+      return content;
+    }
     // builtin $web_search 由平台执行，回显 arguments 作为 tool 结果即可
     for (const c of calls) {
       messages.push({
@@ -116,6 +131,7 @@ async function main() {
     console.log('MOONSHOT_API_KEY 未配置，跳过本次更新。');
     return;
   }
+  console.log(`endpoint: ${BASE_URL} · model: ${MODEL}`);
   const data = readData();
   const raw = await callKimi(apiKey);
   const result = extractJson(raw);
