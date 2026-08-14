@@ -27,6 +27,7 @@ export interface Deal {
   investors: string;
   progress: string;
   links: NewsLink[];  // 数据来源的具体报道链接
+  site?: string;      // 公司官网（如有，经核实）
 }
 
 export const CNY_PER_USD = 7.2;
