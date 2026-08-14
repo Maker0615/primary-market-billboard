@@ -1,14 +1,18 @@
 // ── 面板组件：四维统计 / 一级市场交易 / 详情 / 数据源 ───────────────────────
 import { useMemo, useState } from 'react';
 import { DEALS, DATA_ASOF, dealValuation, type Deal, type Theme } from '../lib/universe';
-import { quarterly, byRound, byTheme, topInvestors, totalUSDm } from '../lib/stats';
-import { QuarterlyChart, HBars, ThemeDonut, ChartCard, GOLD, IVORY, GRAY } from './charts';
+import { quarterly, byTheme, topInvestors, totalUSDm, roundThemeMix } from '../lib/stats';
+import { QuarterlyChart, HBars, RoundStackedBars, ThemeDonut, ChartCard, GOLD, IVORY, GRAY, DONUT_COLORS } from './charts';
 
 // ═══ 四维统计 ═══════════════════════════════════════════════════════════════
 export function StatsPanel() {
   const q = useMemo(quarterly, []);
-  const rounds = useMemo(byRound, []);
   const themes = useMemo(byTheme, []);
+  const themeOrder = useMemo(() => themes.map((t) => t.key), [themes]);
+  const colorOf = useMemo(() => {
+    return (t: string) => DONUT_COLORS[Math.max(0, themeOrder.indexOf(t)) % DONUT_COLORS.length];
+  }, [themeOrder]);
+  const roundMix = useMemo(() => roundThemeMix(themeOrder), [themeOrder]);
   const investors = useMemo(() => topInvestors(10), []);
   const total = totalUSDm();
   return (
@@ -19,13 +23,13 @@ export function StatsPanel() {
           样本 {DEALS.length} 笔 · 披露金额合计 ≈ ${(total / 1000).toFixed(1)}B · 未披露按样本估计
         </div>
       </ChartCard>
-      <ChartCard no="02" title="轮次分布" sub="按归一化轮次统计笔数与金额">
-        <HBars data={rounds} />
+      <ChartCard no="02" title="轮次分布" sub="分段配色 = 该轮次的题材构成">
+        <RoundStackedBars data={roundMix} colorOf={colorOf} />
       </ChartCard>
-      <ChartCard no="03" title="题材分布" sub="交易笔数占比 · 附金额折算">
-        <ThemeDonut data={themes} />
+      <ChartCard no="03" title="题材分布" sub="悬停放大 · 与图例联动">
+        <ThemeDonut data={themes} colorOf={colorOf} />
       </ChartCard>
-      <ChartCard no="04" title="活跃投资机构" sub="按参与样本交易笔数排名 TOP10">
+      <ChartCard no="04" title="活跃投资机构" sub="按参与样本交易笔数排名 TOP10 · 点击进官网">
         <HBars data={investors} labelW={150} />
         <div className="chart-foot">仅统计已披露机构 · 同一机构跨多笔重复计数</div>
       </ChartCard>
@@ -156,7 +160,7 @@ export function DataSourcePanel() {
       <div className="dsec">
         <div className="dsec-label">更新机制</div>
         <div className="dsec-body">
-          数据截止 <b style={{ color: GOLD }}>{DATA_ASOF}</b> · 每日 10:00 全网检索汇总刷新：捕捉新披露融资交易并复核既有样本进展，仅收录有可验证公开报道链接的交易。
+          数据截止 <b style={{ color: GOLD }}>{DATA_ASOF}</b> · 每周六 09:00 全网检索汇总刷新：捕捉新披露融资交易并复核既有样本进展，仅收录有可验证公开报道链接的交易。
         </div>
       </div>
       <div className="dsec">
