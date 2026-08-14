@@ -1,0 +1,962 @@
+{
+  "asOf": "2026-08-13",
+  "deals": [
+    {
+      "id": 11,
+      "co": "英镾智能",
+      "mkt": "CN/US",
+      "date": "2025-03-13",
+      "round": "E轮",
+      "theme": "AI制药",
+      "amt": "$1.1亿",
+      "amtUSDm": 110,
+      "inv": [
+        "惠理集团",
+        "浦东创投"
+      ],
+      "investors": "惠理集团（Value Partners）旗下基金领投，浦东创投等",
+      "progress": "已登陆港交所（03696.HK）；Rentosertib（ISM001-055）2026-07正式启动III期临床（NMPA CDE公示，47中心/320例），为全球首个AI发现靶点+设计分子进入III期的药物",
+      "links": [
+        {
+          "label": "Exa·融资档案（含PRNewswire源）",
+          "url": "https://exa.ai/websets/directory/insilico-funding"
+        },
+        {
+          "label": "BIOCHINA 2026-07-08（III期启动）",
+          "url": "https://www.biocn.cn/news/653.html"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "co": "剂泰医药",
+      "mkt": "CN/US",
+      "date": "2025-08-05",
+      "round": "C轮",
+      "theme": "AI制药",
+      "amt": "$1亿",
+      "amtUSDm": 100,
+      "inv": [
+        "中金资本",
+        "太平香港保险科创基金"
+      ],
+      "investors": "中金资本旗下基金领投，太平香港保险科创基金跟投",
+      "progress": "AI+药物递送平台，小分子管线已推进至III期临床",
+      "links": [
+        {
+          "label": "36氪创投平台·项目信息",
+          "url": "https://pitchhub.36kr.com/project/1713112764688904"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "co": "深势科技",
+      "mkt": "CN",
+      "date": "2025-12-24",
+      "round": "C轮",
+      "theme": "AI4S",
+      "amt": "¥8亿+",
+      "amtUSDm": 112,
+      "inv": [
+        "达晨财智",
+        "京国瑞",
+        "北京AI基金",
+        "北京医药健康基金",
+        "联想创投",
+        "元禾璞华"
+      ],
+      "investors": "达晨财智、京国瑞、北京市AI基金、医药健康基金、联想创投、元禾璞华",
+      "progress": "「玻尔·科研空间站」服务全球300万+科学家，AI for Science基础设施",
+      "links": [
+        {
+          "label": "亿欧 2025-12-24",
+          "url": "https://www.iyiou.com/news/202512241117948"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "co": "圆心科技",
+      "mkt": "CN",
+      "date": "2026-04-22",
+      "round": "Pre-IPO递表",
+      "theme": "大健康",
+      "amt": "未披露",
+      "amtUSDm": 60,
+      "val": "F轮估值¥195亿（招股书口径，已下调）",
+      "inv": [
+        "腾讯",
+        "红杉"
+      ],
+      "investors": "历史11轮融资（腾讯、红杉等），第六次递表港交所",
+      "progress": "201家院边药房+妙手医生；2025年经营现金流转正，亏损大幅收窄",
+      "links": [
+        {
+          "label": "DoNews 2026-07-14",
+          "url": "https://www.donews.com/news/detail/1/6632148.html"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "co": "微医控股",
+      "mkt": "CN",
+      "date": "2025-09-29",
+      "round": "Pre-IPO递表",
+      "theme": "大健康",
+      "amt": "未披露",
+      "amtUSDm": 80,
+      "inv": [
+        "腾讯"
+      ],
+      "investors": "腾讯等（历史股东）",
+      "progress": "2025H1营收30.8亿（+69.4%），AI服务收入占比92%，经营现金流转正",
+      "links": [
+        {
+          "label": "中国经济网 2025-11-11",
+          "url": "http://finance.ce.cn/stock/gsgdbd/202511/t20251111_2572945.shtml"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "co": "Isomorphic Labs",
+      "mkt": "US",
+      "date": "2025-03-31",
+      "round": "首轮外部融资",
+      "theme": "AI制药",
+      "amt": "$6亿",
+      "amtUSDm": 600,
+      "inv": [
+        "Thrive Capital",
+        "GV",
+        "Alphabet"
+      ],
+      "investors": "Thrive Capital领投，GV、Alphabet跟投",
+      "progress": "2026-05-12完成$21亿B轮（Thrive领投，Alphabet/GV/Temasek/MGX/CapitalG/英国主权AI基金参投），累计股权融资约$27亿；IsoDDE引擎（配AlphaFold 3），计划2026年底启动首个临床试验",
+      "links": [
+        {
+          "label": "TechCrunch 2025-03-31",
+          "url": "https://techcrunch.com/2025/03/31/alphabets-ai-drug-discovery-platform-isomorphic-labs-raises-600m-from-thrive/"
+        },
+        {
+          "label": "AI Weekly 2026-05-21（$21亿B轮）",
+          "url": "https://aiweekly.co/newsletters/ai-healthcare/isomorphic-labs-raises-21b-to-scale-its-ai-drug-design"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "co": "Abridge",
+      "mkt": "US",
+      "date": "2025-06-24",
+      "round": "E轮",
+      "theme": "AI4AI",
+      "amt": "$3亿",
+      "amtUSDm": 300,
+      "val": "估值$53亿（公开披露）",
+      "inv": [
+        "a16z"
+      ],
+      "investors": "a16z领投",
+      "progress": "Epic生态临床AI，ARR约$1亿；2026-04完成$3.16亿E+轮",
+      "links": [
+        {
+          "label": "Sacra·公司档案",
+          "url": "https://sacra.com/c/abridge/"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "co": "OpenEvidence",
+      "mkt": "US",
+      "date": "2025-07-15",
+      "round": "B轮",
+      "theme": "大健康",
+      "amt": "$2.1亿",
+      "amtUSDm": 210,
+      "val": "估值$35亿（公开披露）",
+      "inv": [
+        "GV",
+        "Kleiner Perkins",
+        "红杉",
+        "Coatue",
+        "Thrive Capital"
+      ],
+      "investors": "GV、Kleiner Perkins联席领投，红杉、Coatue、Thrive等跟投",
+      "progress": "超40%美国医生日活使用，月支撑850万次临床咨询",
+      "links": [
+        {
+          "label": "OpenEvidence官方公告",
+          "url": "https://www.openevidence.com/announcements/openevidence-the-fastest-growing-application-for-physicians-in-history-announces-dollar210-million-round-at-dollar35-billion-valuation"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "co": "Hippocratic AI",
+      "mkt": "US",
+      "date": "2025-01-09",
+      "round": "B轮",
+      "theme": "AI4AI",
+      "amt": "$1.41亿",
+      "amtUSDm": 141,
+      "val": "估值$16.4亿（公开披露）",
+      "inv": [
+        "Kleiner Perkins"
+      ],
+      "investors": "Kleiner Perkins领投",
+      "progress": "患者端非诊断AI Agent，已签约23家医疗系统与保险方",
+      "links": [
+        {
+          "label": "TechCrunch 2025-01-09",
+          "url": "https://techcrunch.com/2025/01/09/hippocratic-ai-raises-141m-for-creating-patient-facing-ai-agents/"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "co": "Ambience Healthcare",
+      "mkt": "US",
+      "date": "2025-07-29",
+      "round": "C轮",
+      "theme": "AI4AI",
+      "amt": "$2.43亿",
+      "amtUSDm": 243,
+      "inv": [
+        "Oak HC/FT",
+        "a16z",
+        "OpenAI创业基金",
+        "Kleiner Perkins"
+      ],
+      "investors": "Oak HC/FT、a16z联席领投；OpenAI创业基金、Kleiner等跟投",
+      "progress": "临床文档/编码/CDI一体化AI平台，累计融资超$3.45亿",
+      "links": [
+        {
+          "label": "Parsers·融资档案（含SiliconANGLE源）",
+          "url": "https://o.parsers.vc/startup/ambiencehealthcare.com/"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "co": "Neuralink",
+      "mkt": "US",
+      "date": "2025-06-02",
+      "round": "E轮",
+      "theme": "脑机接口",
+      "amt": "$6.5亿",
+      "amtUSDm": 650,
+      "val": "投前约$90亿（Semafor口径）",
+      "inv": [
+        "ARK Invest",
+        "DFJ Growth",
+        "Founders Fund",
+        "G42",
+        "Lightspeed",
+        "QIA",
+        "红杉",
+        "Thrive Capital"
+      ],
+      "investors": "ARK、DFJ Growth、Founders Fund、G42、Lightspeed、QIA、红杉、Thrive等",
+      "progress": "植入5例以上；获FDA突破性器械认定（严重言语障碍）",
+      "links": [
+        {
+          "label": "TechCrunch 2025-06-02",
+          "url": "https://techcrunch.com/2025/06/02/elon-musks-neuralink-closes-a-650m-series-e/"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "co": "Verdiva Bio",
+      "mkt": "US",
+      "date": "2025-01-09",
+      "round": "A轮",
+      "theme": "生物科技",
+      "amt": "$4.11亿",
+      "amtUSDm": 411,
+      "inv": [
+        "Forbion",
+        "General Atlantic",
+        "OrbiMed",
+        "RA Capital",
+        "礼来亚洲基金"
+      ],
+      "investors": "Forbion、General Atlantic领投；OrbiMed、RA Capital、礼来亚洲等",
+      "progress": "口服GLP-1周制剂II期就绪（管线引自中国Sciwind）",
+      "links": [
+        {
+          "label": "PitchBook 2025-01-10",
+          "url": "https://pitchbook.com/news/articles/verdiva-bio-joins-weight-loss-race-with-411m-series-a"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "co": "Metsera",
+      "mkt": "US",
+      "date": "2025-01-31",
+      "round": "IPO",
+      "theme": "生物科技",
+      "amt": "$3.16亿",
+      "amtUSDm": 316,
+      "inv": [],
+      "investors": "纳斯达克IPO（超额认购），Population Health/Arch孵化",
+      "progress": "MET-097i IIa数据读出；2025-09辉瑞宣布收购（公开报道）",
+      "links": [
+        {
+          "label": "Fierce Biotech 2025-01-11（IPO申报）",
+          "url": "https://www.fiercebiotech.com/biotech/obesity-focused-metsera-files-ipo-nine-months-after-emerging"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "co": "主动科技",
+      "mkt": "CN",
+      "date": "2026-08-03",
+      "round": "天使轮",
+      "theme": "脑机接口",
+      "amt": "¥3.3亿",
+      "amtUSDm": 46,
+      "inv": [
+        "中科创星",
+        "联想之星",
+        "九合创投",
+        "道彤投资",
+        "英诺天使基金",
+        "华大松禾生科基金",
+        "济峰资本",
+        "嘉道资本"
+      ],
+      "investors": "中科创星领投；联想之星、九合创投、道彤投资、英诺天使基金、华大松禾生科基金、济峰资本、嘉道资本共同投资",
+      "progress": "临港实验室孵化，2026-02成立，专注侵入式脑机接口；创中国脑机接口领域天使轮融资纪录",
+      "links": [
+        {
+          "label": "新浪财经·21世纪经济报道 2026-08-05",
+          "url": "http://finance.sina.com.cn/roll/2026-08-05/doc-inimffsr5280403.shtml"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "co": "寻明生科（Aureka）",
+      "mkt": "CN",
+      "date": "2026-08-11",
+      "round": "B系列",
+      "theme": "AI4S",
+      "amt": "$1亿",
+      "amtUSDm": 100,
+      "inv": [
+        "Granite Asia",
+        "弘晖基金",
+        "启明创投",
+        "经纬创投",
+        "纽尔利资本"
+      ],
+      "investors": "首轮由Granite Asia独家投资；后续轮次由知名产业投资人领投，弘晖基金跟投，启明创投、经纬创投、纽尔利资本等老股东追加",
+      "progress": "AI+大分子设计平台；距披露$3500万A+轮仅3个月再获B系列，科学发现基模路线",
+      "links": [
+        {
+          "label": "36氪·暗涌Waves 2026-08-11",
+          "url": "https://www.36kr.com/p/3933494167108738"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "co": "英灵殿科技",
+      "mkt": "CN",
+      "date": "2026-07-28",
+      "round": "多轮（早期）",
+      "theme": "AI4S",
+      "amt": "$5,000万",
+      "amtUSDm": 49,
+      "inv": [
+        "五源资本",
+        "真格基金",
+        "中科创星",
+        "襄禾资本",
+        "国方创投",
+        "陆石投资",
+        "奇绩创坛",
+        "L2F光源创业者基金"
+      ],
+      "investors": "五源资本、真格基金、中科创星、襄禾资本、国方创投、陆石投资、奇绩创坛、L2F光源创业者基金及产业方；光源资本任独家FA",
+      "progress": "David Baker实验室三位华人骨干2026-04创立；AlloDesign全模态分子世界模型（蛋白/DNA/RNA/小分子/离子），环肽设计基准领先",
+      "links": [
+        {
+          "label": "36氪 2026-07-28",
+          "url": "https://www.36kr.com/p/3914689643222659"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "co": "术也科技",
+      "mkt": "CN",
+      "date": "2026-08-04",
+      "round": "Pre-A轮",
+      "theme": "AI4S",
+      "amt": "¥数千万",
+      "amtUSDm": 5,
+      "inv": [
+        "太朴生命科学投资",
+        "万原点基金"
+      ],
+      "investors": "太朴生命科学投资领投，万原点基金跟投",
+      "progress": "Physical AI自驱动实验室：智能移液器（红点奖）→多功能工作站→全栈科研智能体；与西湖大学、浙大、迪安诊断等百余家机构合作",
+      "links": [
+        {
+          "label": "新华报业 2026-08-05",
+          "url": "https://www.xhby.net/content/s6a729e23e4b0eb7bb0f9b4e1.html"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "co": "万象智维",
+      "mkt": "CN",
+      "date": "2026-08-10",
+      "round": "天使轮",
+      "theme": "AI4AI",
+      "amt": "未披露",
+      "amtUSDm": 5,
+      "inv": [
+        "宝尔爱迪",
+        "瀚晖资本",
+        "知行资本",
+        "韶音科技"
+      ],
+      "investors": "宝尔爱迪、瀚晖资本、知行资本、韶音科技联合投资",
+      "progress": "端侧大模型与智能Agent技术研发，构建端云协同智能体体系；资金用于研发/团队/市场拓展",
+      "links": [
+        {
+          "label": "亿欧 2026-08-11",
+          "url": "https://www.iyiou.com/data/202608111137748"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "co": "德睿智药",
+      "mkt": "CN",
+      "date": "2026-07-08",
+      "round": "B轮",
+      "theme": "AI制药",
+      "amt": "$5,200万",
+      "amtUSDm": 52,
+      "inv": [],
+      "investors": "多家头部人民币和美元基金（披露未完整）",
+      "progress": "自研口服GLP-1小分子MDR-001启动III期临床；从立项到III期约4年半、投入约$2300万（传统路径的零头）",
+      "links": [
+        {
+          "label": "BIOCHINA 2026-07-08",
+          "url": "https://www.biocn.cn/news/653.html"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "co": "Infinimmune",
+      "mkt": "US",
+      "date": "2026-08-11",
+      "round": "A轮",
+      "theme": "AI制药",
+      "amt": "$7,500万",
+      "amtUSDm": 75,
+      "inv": [
+        "Regeneron Ventures",
+        "Playground Global",
+        "RA Capital",
+        "Merck GHIF",
+        "Pear VC"
+      ],
+      "investors": "Regeneron Ventures、Playground Global、RA Capital、Merck全球健康创新基金、Pear VC等",
+      "progress": "AI驱动抗体发现；IFX-101（IL-22，全新靶点）与IFX-201（IL-13）两款湿疹候选药明年进入临床",
+      "links": [
+        {
+          "label": "Fierce Biotech 融资追踪 2026-08（英文源建议浏览器打开）",
+          "url": "https://www.fiercebiotech.com/biotech/fierce-biotech-fundraising-tracker-26"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "co": "LifeMine Therapeutics",
+      "mkt": "US",
+      "date": "2026-08-06",
+      "round": "E轮",
+      "theme": "生物科技",
+      "amt": "$1.88亿",
+      "amtUSDm": 188,
+      "inv": [
+        "Milky Way Investments",
+        "Bezos Expeditions",
+        "Gates Frontier",
+        "RA Capital",
+        "GV",
+        "GSK",
+        "ARCH Venture Partners"
+      ],
+      "investors": "Milky Way Investments、Bezos Expeditions、Gates Frontier、RA Capital、GV、GSK、ARCH Venture Partners等",
+      "progress": "真菌基因组挖掘天然产物药物；LIFE-001推进肾移植II期（2028数据）与胰岛细胞移植Ib期",
+      "links": [
+        {
+          "label": "Fierce Biotech 融资追踪 2026-08（英文源建议浏览器打开）",
+          "url": "https://www.fiercebiotech.com/biotech/fierce-biotech-fundraising-tracker-26"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "co": "Epicrispr Biotechnologies",
+      "mkt": "US",
+      "date": "2026-08-11",
+      "round": "C轮",
+      "theme": "生物科技",
+      "amt": "$9,000万",
+      "amtUSDm": 90,
+      "inv": [
+        "Octagon Capital",
+        "Janus Henderson",
+        "Fidelity",
+        "Sanofi Ventures",
+        "Cormorant"
+      ],
+      "investors": "Octagon Capital、Janus Henderson、Fidelity、Sanofi Ventures、Cormorant等",
+      "progress": "表观遗传药物平台；EPI-321（FSHD面肩肱型肌营养不良）I/II期数据显示三名患者瘦体重增加",
+      "links": [
+        {
+          "label": "Fierce Biotech 融资追踪 2026-08（英文源建议浏览器打开）",
+          "url": "https://www.fiercebiotech.com/biotech/fierce-biotech-fundraising-tracker-26"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "co": "Vaderis Therapeutics",
+      "mkt": "US",
+      "date": "2026-08-11",
+      "round": "B轮",
+      "theme": "生物科技",
+      "amt": "$1.52亿",
+      "amtUSDm": 152,
+      "inv": [
+        "Goldman Sachs Alternatives",
+        "TCGX",
+        "Omega Funds",
+        "EQT Life Sciences",
+        "Perceptive Advisors",
+        "Medicxi"
+      ],
+      "investors": "高盛另类投资生命科学、TCGX、Omega Funds、EQT Life Sciences、Perceptive Advisors、Medicxi等",
+      "progress": "AKT抑制剂engasertib推进III期，目标成为遗传性出血性毛细血管扩张症（HHT）首个获批疗法",
+      "links": [
+        {
+          "label": "Fierce Biotech 融资追踪 2026-08（英文源建议浏览器打开）",
+          "url": "https://www.fiercebiotech.com/biotech/fierce-biotech-fundraising-tracker-26"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "co": "NewLimit",
+      "mkt": "US",
+      "date": "2026-06-02",
+      "round": "C轮",
+      "theme": "生物科技",
+      "amt": "$4.35亿",
+      "amtUSDm": 435,
+      "val": "投后估值$31亿（公开披露）",
+      "inv": [
+        "Founders Fund",
+        "Thrive Capital",
+        "Greenoaks",
+        "Quiet Capital",
+        "Kleiner Perkins",
+        "Valor Equity Partners",
+        "Eli Lilly Ventures"
+      ],
+      "investors": "Founders Fund领投；Thrive、Greenoaks、Quiet Capital新进；Kleiner Perkins、Valor、Eli Lilly Ventures、Nat Friedman/Daniel Gross等回归",
+      "progress": "表观遗传重编程（LNP递送mRNA转录因子），原型药逆转老年肝细胞年龄；首个研究者发起人体试验计划2027年底（脂肪肝方向）",
+      "links": [
+        {
+          "label": "NewLimit 官方博客 2026-06-02（英文源建议浏览器打开）",
+          "url": "https://blog.newlimit.com/p/newlimit-raises-435m-led-by-founders"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "co": "Chai Discovery",
+      "mkt": "US",
+      "date": "2026-07-14",
+      "round": "C轮",
+      "theme": "AI4S",
+      "amt": "$4亿",
+      "amtUSDm": 400,
+      "val": "投后估值$38亿（公开披露）",
+      "inv": [
+        "Index Ventures",
+        "Kleiner Perkins",
+        "红杉",
+        "Dimension",
+        "Bain Capital Ventures",
+        "Battery Ventures",
+        "Baillie Gifford",
+        "BDT & MSD",
+        "Sapphire Ventures",
+        "OpenAI",
+        "Thrive Capital",
+        "Oak HC/FT"
+      ],
+      "investors": "Index Ventures领投，Kleiner Perkins、红杉、Dimension；新进Bain Capital Ventures、Battery、Baillie Gifford、BDT & MSD、Sapphire、Avra；OpenAI、Thrive、Oak HC/FT等老股东跟投",
+      "progress": "分子基础模型Chai系列；官宣前一日与诺华达成合作，同时列辉瑞/礼来/诺华三大药企伙伴；7个月估值翻三倍",
+      "links": [
+        {
+          "label": "Business Wire 2026-07-14（英文源建议浏览器打开）",
+          "url": "https://www.businesswire.com/news/home/20260713849009/en/Chai-Discovery-Announces-%24400M-Series-C-to-Advance-AI-Driven-Molecular-Design"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "co": "Earendil Labs",
+      "mkt": "US",
+      "date": "2026-03-20",
+      "round": "股权融资",
+      "theme": "AI制药",
+      "amt": "$7.87亿",
+      "amtUSDm": 787,
+      "inv": [],
+      "investors": "公开披露未完整",
+      "progress": "AI驱动生物药发现开发（蛋白语言模型进化人源抗体）；2025-04与赛诺菲达成自免/肠炎双抗全球独家授权；2026年最大单笔生物融资之一",
+      "links": [
+        {
+          "label": "PR Newswire 2026-03-20（英文源建议浏览器打开）",
+          "url": "https://www.prnewswire.com/news-releases/earendil-labs-announces-787-million-in-financing-to-scale-ai-driven-biologics-discovery-and-development-302719748.html"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "co": "深度细胞",
+      "mkt": "CN",
+      "date": "2026-08-10",
+      "round": "种子轮",
+      "theme": "AI制药",
+      "amt": "¥近1亿",
+      "amtUSDm": 14,
+      "inv": [
+        "中科创星",
+        "顺禧基金",
+        "千骥资本",
+        "水木创投",
+        "清科创投",
+        "鼎峰科创"
+      ],
+      "investors": "中科创星、顺禧基金、千骥资本联合领投；水木创投、清科创投、鼎峰科创跟投",
+      "progress": "分子相互作用智能基座模型+虚拟细胞：AI表征生成与分子物理/构象动力学深度融合；2024年成立，总部北京",
+      "links": [
+        {
+          "label": "新浪财经 2026-08-10",
+          "url": "https://finance.sina.com.cn/jjxw/2026-08-10/doc-inimuvrt2920648.shtml"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "co": "TareBio",
+      "mkt": "US",
+      "date": "2026-07-01",
+      "round": "种子轮（YC S26）",
+      "theme": "生物科技",
+      "amt": "$50万（YC标准条款）",
+      "amtUSDm": 0.5,
+      "inv": [
+        "Y Combinator"
+      ],
+      "investors": "Y Combinator（S26批次标准投资条款）",
+      "progress": "免疫印记反向工程抗原：读出体内正在作战的抗原来反推设计，数周为任意疾病开发个性化/群体级疫苗；已在小鼠实现癌症治愈",
+      "links": [
+        {
+          "label": "Y Combinator·S26批次医疗名录（英文源建议浏览器打开）",
+          "url": "https://www.ycombinator.com/companies/industry/healthcare"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "co": "Gutgutgoose",
+      "mkt": "US",
+      "date": "2026-07-01",
+      "round": "种子轮（YC S26）",
+      "theme": "大健康",
+      "amt": "$50万（YC标准条款）",
+      "amtUSDm": 0.5,
+      "inv": [
+        "Y Combinator"
+      ],
+      "investors": "Y Combinator（S26批次标准投资条款）",
+      "progress": "粪便样本测序→肠道代谢模型→益生菌定殖模拟→90天再测序闭环；长期目标为慢病症状出现前数年的预测模型",
+      "links": [
+        {
+          "label": "Y Combinator·S26批次医疗名录（英文源建议浏览器打开）",
+          "url": "https://www.ycombinator.com/companies/industry/healthcare"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "co": "Aidoc",
+      "mkt": "US",
+      "date": "2025-07-25",
+      "round": "新一轮",
+      "theme": "大健康",
+      "amt": "$1.5亿",
+      "amtUSDm": 150,
+      "inv": [
+        "General Catalyst",
+        "Square Peg",
+        "NVentures"
+      ],
+      "investors": "General Catalyst、Square Peg领投；英伟达NVentures及Hartford HealthCare、Mercy等医疗系统跟投",
+      "progress": "AI医疗影像分诊龙头；资金用于扩展aiOS——帮助医疗系统部署管理多AI方案的操作系统",
+      "links": [
+        {
+          "label": "微信公众号·2025年7月全球医疗投融资月报",
+          "url": "http://mp.weixin.qq.com/s?__biz=MzU1Nzc2OTkyNw==&mid=2247503705&idx=3&sn=ef7967d4ace0d180b5b2a0df2d1280fc"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "co": "Dispatch Bio",
+      "mkt": "US",
+      "date": "2025-07-23",
+      "round": "种子/A轮",
+      "theme": "生物科技",
+      "amt": "$2.16亿",
+      "amtUSDm": 216,
+      "inv": [
+        "ARCH Venture Partners",
+        "Parker Institute for Cancer Immunotherapy",
+        "Bristol-Myers Squibb",
+        "Stanford University",
+        "University of Pennsylvania"
+      ],
+      "investors": "ARCH Venture Partners与Parker癌症免疫治疗研究所联合领投；百时美施贵宝、斯坦福大学、宾夕法尼亚大学等参投",
+      "progress": "免疫疗法新贵；资金推进首个治疗候选药物进入人体临床（计划2026年）",
+      "links": [
+        {
+          "label": "微信公众号·2025年7月全球医疗投融资月报",
+          "url": "http://mp.weixin.qq.com/s?__biz=MzU1Nzc2OTkyNw==&mid=2247503705&idx=3&sn=ef7967d4ace0d180b5b2a0df2d1280fc"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "co": "Function Health",
+      "mkt": "US",
+      "date": "2026-08-03",
+      "round": "成长轮",
+      "theme": "大健康",
+      "amt": "$4.5亿",
+      "amtUSDm": 450,
+      "inv": [
+        "General Catalyst"
+      ],
+      "investors": "General Catalyst（VC News Daily 口径）",
+      "progress": "预防性健康与诊断会员制平台：软件+医疗数据+经常性消费需求组合，预防医学赛道最大单笔之一",
+      "links": [
+        {
+          "label": "mean.ceo·8月融资汇总（引VC News Daily）",
+          "url": "https://blog.mean.ceo/startup-funding-announcements-news-august-2026/"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "co": "NeoCognition",
+      "mkt": "US",
+      "date": "2026-04-23",
+      "round": "种子轮",
+      "theme": "AI4AI",
+      "amt": "$4,000万",
+      "amtUSDm": 40,
+      "inv": [
+        "Cambium Capital",
+        "Walden Catalyst",
+        "Vista Equity Partners"
+      ],
+      "investors": "Cambium Capital、Walden Catalyst联合领投，Vista Equity Partners参与；英特尔CEO陈立武、Databricks联创Ion Stoica等天使",
+      "progress": "俄亥俄州立大学智能体实验室负责人苏煜创立；自主学习智能体研究实验室，攻关智能体可靠性（当前任务成功率仅约50%）",
+      "links": [
+        {
+          "label": "新浪财经 2026-04-23",
+          "url": "http://finance.sina.com.cn/tech/roll/2026-04-23/doc-inhvnhrh5497224.shtml"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "co": "Boltz",
+      "mkt": "US",
+      "date": "2026-01-08",
+      "round": "种子轮",
+      "theme": "AI4S",
+      "amt": "$2,800万",
+      "amtUSDm": 28,
+      "inv": [
+        "a16z",
+        "Amplify Partners",
+        "Zetta Venture Partners"
+      ],
+      "investors": "a16z、Amplify Partners、Zetta Venture Partners联合领投；Hugging Face创始人Clément Delangue等天使",
+      "progress": "MIT团队；开源生物分子基础模型Boltz-2/BoltzGen（结构预测/亲和力/从头设计）+ AI发现智能体平台；与辉瑞、武田合作",
+      "links": [
+        {
+          "label": "Cure·AI药物发现融资追踪2026（英文源建议浏览器打开）",
+          "url": "https://wewillcure.com/insights/news/ai-and-machine-learning/ai-drug-discovery-venture-funding-tracker-2026"
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "co": "Topos Bio",
+      "mkt": "US",
+      "date": "2026-01-08",
+      "round": "种子轮",
+      "theme": "AI4S",
+      "amt": "$1,050万",
+      "amtUSDm": 10.5,
+      "inv": [
+        "Boldstart",
+        "Threshold",
+        "Neo"
+      ],
+      "investors": "Boldstart、Threshold、Neo领投；Uber CEO Dara Khosrowshahi、Naveen Rao等天使",
+      "progress": "AI-native基础模型Topos-1针对天然无序蛋白（IDP）生成动态构象系综，配对生成化学设计小分子；从阿尔茨海默/帕金森切入「不可成药」靶点",
+      "links": [
+        {
+          "label": "Cure·AI药物发现融资追踪2026（英文源建议浏览器打开）",
+          "url": "https://wewillcure.com/insights/news/ai-and-machine-learning/ai-drug-discovery-venture-funding-tracker-2026"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "co": "Proxima",
+      "mkt": "US",
+      "date": "2026-01-13",
+      "round": "种子轮",
+      "theme": "AI制药",
+      "amt": "$8,000万",
+      "amtUSDm": 80,
+      "inv": [],
+      "investors": "公开披露未完整（由VantAI更名而来）",
+      "progress": "AI-native邻近药物公司：蛋白互作调节（分子胶/PROTAC超集）的数据+机器学习栈",
+      "links": [
+        {
+          "label": "BioBucks·2026融资追踪（英文源建议浏览器打开）",
+          "url": "https://www.biobucks.co/biotech-vc-funding-tracker-2026"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "co": "Accipiter Bio",
+      "mkt": "US",
+      "date": "2026-07-31",
+      "round": "种子轮（追加）",
+      "theme": "AI4S",
+      "amt": "$1,050万",
+      "amtUSDm": 10.5,
+      "inv": [
+        "Flying Fish Partners",
+        "Takeda",
+        "Columbus Venture Partners",
+        "Cercano Capital",
+        "WRF Capital"
+      ],
+      "investors": "既有股东追加：Flying Fish Partners、Takeda联合领投种子轮成员（Columbus、Cercano、WRF、Alexandria等）",
+      "progress": "华盛顿大学IPD/Baker实验室血统，AI蛋白工程实现单分子双靶点结合；与辉瑞（里程碑超$3.3亿）和Kite Pharma合作",
+      "links": [
+        {
+          "label": "GeekWire 2026-07-31（英文源建议浏览器打开）",
+          "url": "https://www.geekwire.com/2026/moving-faster-than-planned-ai-drug-developer-accipiter-bio-quietly-tops-up-seed-round-with-10-5m/"
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "co": "Mendra",
+      "mkt": "US",
+      "date": "2026-01-22",
+      "round": "A轮",
+      "theme": "生物科技",
+      "amt": "$8,200万",
+      "amtUSDm": 82,
+      "inv": [],
+      "investors": "公开披露未完整",
+      "progress": "收购开发不足的罕见病资产构建组合，用AI缩短开发与商业化周期，服务患者不足人群",
+      "links": [
+        {
+          "label": "BioBucks·2026融资追踪（英文源建议浏览器打开）",
+          "url": "https://www.biobucks.co/biotech-vc-funding-tracker-2026"
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "co": "Perceptic",
+      "mkt": "US",
+      "date": "2026-05-26",
+      "round": "种子轮",
+      "theme": "AI制药",
+      "amt": "$1,200万",
+      "amtUSDm": 12,
+      "inv": [
+        "Accel",
+        "Air Street Capital",
+        "Elder Gull"
+      ],
+      "investors": "Accel领投，Air Street Capital、Elder Gull参与",
+      "progress": "面向大药企的端到端AI平台：外部资产搜寻、适应症选择、临床试验设计数据基座；总部伦敦，巴塞尔设点",
+      "links": [
+        {
+          "label": "Cure·AI药物发现融资追踪2026（英文源建议浏览器打开）",
+          "url": "https://wewillcure.com/insights/news/ai-and-machine-learning/ai-drug-discovery-venture-funding-tracker-2026"
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "co": "Helical",
+      "mkt": "US",
+      "date": "2026-04-14",
+      "round": "种子轮",
+      "theme": "AI4S",
+      "amt": "$1,000万",
+      "amtUSDm": 10,
+      "inv": [
+        "redalpine",
+        "Gradient",
+        "BoxGroup",
+        "Frst"
+      ],
+      "investors": "redalpine领投，Gradient、BoxGroup、Frst及Cohere创始人Aidan Gomez、Clément Delangue等天使",
+      "progress": "把生物基础模型变成可复现的in-silico药物发现工作流（靶点识别/生物标志物/治疗设计），计算实验替代慢速湿实验",
+      "links": [
+        {
+          "label": "Cure·AI药物发现融资追踪2026（英文源建议浏览器打开）",
+          "url": "https://wewillcure.com/insights/news/ai-and-machine-learning/ai-drug-discovery-venture-funding-tracker-2026"
+        }
+      ]
+    }
+  ]
+}
