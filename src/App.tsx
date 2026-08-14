@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { DealsPanel, StatsPanel, DetailPanel, DataSourcePanel } from './components/panels';
 import { DEALS, DATA_ASOF, type Deal } from './lib/universe';
 
@@ -6,17 +6,47 @@ export default function App() {
   const [selDeal, setSelDeal] = useState<Deal | null>(null);
   const [dealFilter, setDealFilter] = useState('全部');
   const [clock, setClock] = useState(new Date());
+  // 移动端手势返回：弹窗入栈历史，滑动返回/系统返回键只关弹窗不退出站点
+  const pushedRef = useRef(false);
 
   useEffect(() => {
     const t = setInterval(() => setClock(new Date()), 1000);
     return () => clearInterval(t);
   }, []);
 
+  const openDeal = (d: Deal) => {
+    setSelDeal(d);
+    if (!pushedRef.current) {
+      window.history.pushState({ pmb: 'deal' }, '');
+      pushedRef.current = true;
+    }
+  };
+  const closeDeal = (viaPop = false) => {
+    setSelDeal(null);
+    if (pushedRef.current) {
+      pushedRef.current = false;
+      if (!viaPop) window.history.back();
+    }
+  };
+
+  // 系统返回（含 iOS 边缘滑动手势）→ 关闭弹窗
+  useEffect(() => {
+    const onPop = () => {
+      if (pushedRef.current) {
+        pushedRef.current = false;
+        setSelDeal(null);
+      }
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   // Esc 关闭详情弹窗
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setSelDeal(null); };
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeDeal(); };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 弹窗打开时锁定背景滚动
@@ -32,7 +62,7 @@ export default function App() {
         <div className="brand-text">
           <div className="brand-title">Primary Market Billboard</div>
           <div className="brand-sub">
-            美/中 · <span className="brand-date">更新 {DATA_ASOF}</span> · 每日 10:00 自动更新
+            美/中 · <span className="brand-date">更新 {DATA_ASOF}</span> · 每周六 09:00 自动更新
           </div>
         </div>
         <nav className="fnkeys">
@@ -56,7 +86,7 @@ export default function App() {
           <span className="section-title">DEAL FLOW · 一级市场交易</span>
           <span className="section-sub">{dealFilter}</span>
         </header>
-        <DealsPanel selected={selDeal?.id ?? null} filter={dealFilter} setFilter={setDealFilter} onSelect={setSelDeal} />
+        <DealsPanel selected={selDeal?.id ?? null} filter={dealFilter} setFilter={setDealFilter} onSelect={openDeal} />
       </section>
 
       {/* ── 03 数据源 ── */}
@@ -71,7 +101,7 @@ export default function App() {
       <footer className="statusbar">
         <span className="status-dot">●</span>
         <span>样本 {DEALS.length} 笔</span>
-        <span>更新 {DATA_ASOF} · 每日全网汇总</span>
+        <span>更新 {DATA_ASOF} · 每周全网汇总</span>
         <span className="status-right">
           {clock.toLocaleTimeString('zh-CN', { hour12: false })} · 非投资建议
         </span>
@@ -79,11 +109,11 @@ export default function App() {
 
       {/* ── 交易详情弹窗 ── */}
       {selDeal && (
-        <div className="modal-mask" onClick={() => setSelDeal(null)}>
+        <div className="modal-mask" onClick={() => closeDeal()}>
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <div className="modal-head">
               <span className="modal-title">交易详情</span>
-              <button className="modal-close" onClick={() => setSelDeal(null)}>✕</button>
+              <button className="modal-close" onClick={() => closeDeal()}>✕</button>
             </div>
             <div className="modal-body">
               <DetailPanel deal={selDeal} />
