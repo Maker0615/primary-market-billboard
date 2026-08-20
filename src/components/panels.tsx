@@ -18,19 +18,19 @@ export function StatsPanel() {
   const total = totalUSDm();
   return (
     <div className="stats-grid">
-      <ChartCard no="01" title="季度交易节奏" sub="笔数（柱）× 披露金额（线）">
+      <ChartCard no="01" title="季度交易节奏">
         <QuarterlyChart data={q} />
         <div className="chart-foot">
           样本 {DEALS.length} 笔 · 披露金额合计 ≈ ${(total / 1000).toFixed(1)}B · 未披露按样本估计
         </div>
       </ChartCard>
-      <ChartCard no="02" title="轮次分布" sub="分段配色 = 该轮次的题材构成">
+      <ChartCard no="02" title="轮次分布">
         <RoundStackedBars data={roundMix} colorOf={colorOf} />
       </ChartCard>
-      <ChartCard no="03" title="题材分布" sub="悬停放大 · 与图例联动">
+      <ChartCard no="03" title="题材分布">
         <ThemeDonut data={themes} colorOf={colorOf} />
       </ChartCard>
-      <ChartCard no="04" title="活跃投资机构" sub={`按参与样本交易笔数排名${invAll ? '（全部）' : ' TOP10'} · 点击进官网`}>
+      <ChartCard no="04" title="活跃投资机构" sub={`按参与样本交易笔数排名${invAll ? '（全部）' : ' TOP10'}`}>
         <HBars data={investors} labelW={150} />
         <div className="chart-foot" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <span>仅统计已披露机构 · 同一机构跨多笔重复计数</span>
@@ -52,6 +52,7 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
 }) {
   const [mkt, setMkt] = useState<'全部' | 'CN' | 'US'>('全部');
   const [showAll, setShowAll] = useState(false);
+  const [query, setQuery] = useState('');
   // 默认只显示近一年（按当前日期滚动）
   const cutoff = useMemo(() => {
     const d = new Date();
@@ -63,12 +64,24 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
     if (filter !== '全部') r = r.filter((d) => d.theme === filter);
     if (mkt !== '全部') r = r.filter((d) => d.mkt === mkt || d.mkt.includes(mkt));
     if (!showAll) r = r.filter((d) => d.date >= cutoff);
+    const q = query.trim().toLowerCase();
+    if (q) r = r.filter((d) =>
+      d.co.toLowerCase().includes(q) || d.investors.toLowerCase().includes(q) ||
+      d.inv.some((n) => n.toLowerCase().includes(q)) || d.theme.includes(query.trim())
+    );
     return r;
-  }, [filter, mkt, showAll, cutoff]);
+  }, [filter, mkt, showAll, cutoff, query]);
   const hiddenCount = useMemo(() => DEALS.filter((d) => d.date < cutoff).length, [cutoff]);
   const totalUSDmRows = rows.reduce((s, d) => s + d.amtUSDm, 0);
   return (
     <div className="panel">
+      <input
+        className="deal-search"
+        placeholder="搜索项目 / 机构…"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        spellCheck={false}
+      />
       <div className="tabs" style={{ flexWrap: 'wrap' }}>
         {THEMES.map((t) => (
           <button key={t} className={`tab ${filter === t ? 'tab-on' : ''}`} onClick={() => setFilter(t)}>{t}</button>
@@ -109,7 +122,7 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
         <span>* 估值为推算值（融资额÷10%股比稀释）· 点击查看机构 / 进展 / 来源链接</span>
         {hiddenCount > 0 && (
           <button className="more-btn" onClick={() => setShowAll(!showAll)}>
-            {showAll ? '缩小 −' : `更多（含 ${hiddenCount} 笔一年前）+`}
+            {showAll ? '缩小 −' : '更多 +'}
           </button>
         )}
       </div>
@@ -147,6 +160,15 @@ export function DetailPanel({ deal }: { deal: Deal | null }) {
         </div>
       </div>
       <div className="dsec">
+        <div className="dsec-label">历史融资</div>
+        {(deal.hist ?? []).map((h, i) => (
+          <div key={i} className="hist-item">
+            <span className="hist-dot" />
+            <span>{h}</span>
+          </div>
+        ))}
+      </div>
+      <div className="dsec">
         <div className="dsec-label">本轮参与机构</div>
         <div className="dsec-body">{deal.investors}</div>
       </div>
@@ -177,13 +199,12 @@ export function DetailPanel({ deal }: { deal: Deal | null }) {
 
 // ═══ 数据源说明 ══════════════════════════════════════════════════════════════
 export function DataSourcePanel() {
-  const themes = new Set(DEALS.map((d) => d.theme)).size;
   return (
     <div className="panel detail">
       <div className="dsec">
         <div className="dsec-label">数据集</div>
         <div className="dsec-body">
-          样本 <b style={{ color: GOLD }}>{DEALS.length}</b> 笔 · 覆盖 美国 / 中国 · {themes} 类题材
+          样本 <b style={{ color: GOLD }}>{DEALS.length}</b> 笔 · 覆盖 美国 / 中国
         </div>
       </div>
       <div className="dsec">
