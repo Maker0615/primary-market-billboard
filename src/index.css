@@ -134,6 +134,22 @@ body {
 /* 日期双模式：桌面完整 / 移动端年月 */
 .d-ym { display: none; }
 
+/* 项目搜索框 */
+.deal-search {
+  width: 100%; background: none; border: none; outline: none;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ivory); font-family: var(--sans); font-weight: 300;
+  font-size: 13px; letter-spacing: 0.06em;
+  padding: 4px 0 10px; margin-bottom: 10px;
+  caret-color: var(--gold);
+}
+.deal-search::placeholder { color: var(--gray); }
+.deal-search:focus { border-bottom-color: var(--gold); }
+
+/* 历史融资垂直条目 */
+.hist-item { display: flex; gap: 10px; align-items: baseline; padding: 3px 0; color: #CFC9BA; font-size: 12px; }
+.hist-dot { width: 5px; height: 5px; background: var(--gold); flex-shrink: 0; transform: translateY(-1px); }
+
 /* 环形图联动 */
 .donut-li { cursor: pointer; padding: 2px 4px; margin: 0 -4px; transition: background 0.15s; }
 .donut-li-on { background: rgba(201,168,106,0.12); }
@@ -293,6 +309,12 @@ body {
   .c-amt { width: auto; flex-shrink: 0; max-width: 96px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .tabs { gap: 14px; }
   .tabs-note { width: 100%; margin-left: 0; }
+
+  /* 条形图：给轨道留足宽度 */
+  .hbar-row { gap: 6px; }
+  .hbar-label { max-width: 96px; font-size: 11px; }
+  .hbar-usd { display: none; }
+  .hbar-val { width: 36px; font-size: 10.5px; }
 
   /* 弹窗：近全屏 */
   .modal-mask { padding: 0; align-items: stretch; }
