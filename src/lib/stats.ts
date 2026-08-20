@@ -33,7 +33,7 @@ export function quarterly(): QuarterPoint[] {
 
 // 轮次归一化：种子·天使 / A / B / C / D+ / 成长·战略 / IPO·Pre-IPO
 const ROUND_ORDER = ['种子/天使轮', 'A轮', 'B轮', 'C轮', 'D轮及以后', '成长/战略轮', 'IPO·Pre-IPO'];
-const ROUND_OVERRIDE: Record<number, string> = { 21: '成长/战略轮', 32: '种子/天使轮', 46: '成长/战略轮', 60: '成长/战略轮', 62: '成长/战略轮' };
+const ROUND_OVERRIDE: Record<number, string> = { 21: '成长/战略轮', 32: '种子/天使轮', 46: '成长/战略轮', 60: '成长/战略轮', 62: '成长/战略轮', 70: '种子/天使轮', 75: '成长/战略轮' };
 
 export function roundBucket(d: Deal): string {
   if (ROUND_OVERRIDE[d.id]) return ROUND_OVERRIDE[d.id];
