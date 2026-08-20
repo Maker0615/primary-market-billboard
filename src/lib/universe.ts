@@ -28,6 +28,7 @@ export interface Deal {
   progress: string;
   links: NewsLink[];  // 数据来源的具体报道链接
   site?: string;      // 公司官网（如有，经核实）
+  hist?: string[];    // 历史融资（简明条目，如 "2026-05 · B轮 · $21亿 · Thrive领投"）
 }
 
 export const CNY_PER_USD = 7.2;

@@ -62,7 +62,7 @@ export default function App() {
         <div className="brand-text">
           <div className="brand-title">Primary Market Billboard</div>
           <div className="brand-sub">
-            美/中 · <span className="brand-date">更新 {DATA_ASOF}</span> · 每周六 09:00 自动更新
+            <span className="brand-date">更新于 {DATA_ASOF}</span>
           </div>
         </div>
         <nav className="fnkeys">
@@ -75,7 +75,7 @@ export default function App() {
       {/* ── 01 交易统计 ── */}
       <section className="section" id="stats">
         <header className="section-head">
-          <span className="section-title">ANALYTICS · 交易统计</span>
+          <span className="section-title">ANALYTICS</span>
         </header>
         <StatsPanel />
       </section>
@@ -83,8 +83,7 @@ export default function App() {
       {/* ── 02 一级市场交易 ── */}
       <section className="section" id="deals">
         <header className="section-head">
-          <span className="section-title">DEAL FLOW · 一级市场交易</span>
-          <span className="section-sub">{dealFilter}</span>
+          <span className="section-title">DEAL FLOW</span>
         </header>
         <DealsPanel selected={selDeal?.id ?? null} filter={dealFilter} setFilter={setDealFilter} onSelect={openDeal} />
       </section>
@@ -92,7 +91,7 @@ export default function App() {
       {/* ── 03 数据源 ── */}
       <section className="section" id="source">
         <header className="section-head">
-          <span className="section-title">DATA SOURCE · 数据源</span>
+          <span className="section-title">DATA SOURCE</span>
         </header>
         <DataSourcePanel />
       </section>
@@ -100,7 +99,7 @@ export default function App() {
       {/* ── 状态栏 ── */}
       <footer className="statusbar">
         <span className="status-dot">●</span>
-        <span>更新 {DATA_ASOF} · 每周全网汇总</span>
+        <span>更新于 {DATA_ASOF} · 每周全网汇总</span>
         <span className="status-right">
           {clock.toLocaleTimeString('zh-CN', { hour12: false })} · 非投资建议
         </span>
