@@ -1,5 +1,5 @@
 // ── 面板组件：四维统计 / 一级市场交易 / 详情 / 数据源 ───────────────────────
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { DEALS, DATA_ASOF, dealValuation, type Deal, type Theme } from '../lib/universe';
 import { quarterly, byTheme, topInvestors, totalUSDm, roundThemeMix } from '../lib/stats';
 import { QuarterlyChart, HBars, RoundStackedBars, ThemeDonut, ChartCard, GOLD, IVORY, GRAY, DONUT_COLORS } from './charts';
@@ -14,6 +14,8 @@ export function StatsPanel() {
   }, [themeOrder]);
   const roundMix = useMemo(() => roundThemeMix(themeOrder), [themeOrder]);
   const [invAll, setInvAll] = useState(false);
+  // 轮次 × 题材 联动：悬停任一侧的分段/扇区，另一侧同步高亮
+  const [activeTheme, setActiveTheme] = useState<string | null>(null);
   const investors = useMemo(() => topInvestors(invAll ? 200 : 10), [invAll]);
   const total = totalUSDm();
   return (
@@ -25,10 +27,10 @@ export function StatsPanel() {
         </div>
       </ChartCard>
       <ChartCard no="02" title="轮次分布">
-        <RoundStackedBars data={roundMix} colorOf={colorOf} />
+        <RoundStackedBars data={roundMix} colorOf={colorOf} active={activeTheme} onActive={setActiveTheme} />
       </ChartCard>
       <ChartCard no="03" title="题材分布">
-        <ThemeDonut data={themes} colorOf={colorOf} />
+        <ThemeDonut data={themes} colorOf={colorOf} active={activeTheme} onActive={setActiveTheme} />
       </ChartCard>
       <ChartCard no="04" title="活跃投资机构" sub={`按参与样本交易笔数排名${invAll ? '（全部）' : ' TOP10'}`}>
         <HBars data={investors} labelW={150} />
@@ -46,17 +48,18 @@ export function StatsPanel() {
 // ═══ 一级市场交易 ════════════════════════════════════════════════════════════
 const THEMES: Array<Theme | '全部'> = ['全部', 'AI4S', 'AI4AI', 'AI制药', '生物科技', '大健康', '脑机接口'];
 
-export function DealsPanel({ onSelect, selected, filter, setFilter }: {
+export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
   onSelect: (d: Deal) => void; selected: number | null;
   filter: string; setFilter: (f: string) => void;
+  onList?: (rows: Deal[]) => void;
 }) {
   const [mkt, setMkt] = useState<'全部' | 'CN' | 'US'>('全部');
   const [showAll, setShowAll] = useState(false);
   const [query, setQuery] = useState('');
-  // 默认只显示近一年（按当前日期滚动）
+  // 默认只显示近 6 个月（按当前日期滚动），更早的经「更多」展开
   const cutoff = useMemo(() => {
     const d = new Date();
-    d.setFullYear(d.getFullYear() - 1);
+    d.setMonth(d.getMonth() - 6);
     return d.toISOString().slice(0, 10);
   }, []);
   const rows = useMemo(() => {
@@ -73,6 +76,8 @@ export function DealsPanel({ onSelect, selected, filter, setFilter }: {
   }, [filter, mkt, showAll, cutoff, query]);
   const hiddenCount = useMemo(() => DEALS.filter((d) => d.date < cutoff).length, [cutoff]);
   const totalUSDmRows = rows.reduce((s, d) => s + d.amtUSDm, 0);
+  // 当前可见列表上抛，供详情弹窗左右切换
+  useEffect(() => { onList?.(rows); }, [rows, onList]);
   return (
     <div className="panel">
       <input
