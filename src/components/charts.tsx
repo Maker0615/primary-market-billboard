@@ -87,12 +87,15 @@ export function HBars({ data, labelW = 132, showUSD = true }: { data: Array<Buck
   );
 }
 
-// ═══ 轮次 × 题材 堆叠条形（分段宽度=题材占比，配色与环形图一致） ═══════════
-export function RoundStackedBars({ data, colorOf, labelW = 132 }: {
+// ═══ 轮次 × 题材 堆叠条形（分段宽度=题材占比，与环形图联动高亮） ═══════════
+export function RoundStackedBars({ data, colorOf, active, onActive, labelW = 132 }: {
   data: Array<Bucket & { segs: Array<{ theme: string; count: number }> }>;
   colorOf: (theme: string) => string;
+  active?: string | null;
+  onActive?: (t: string | null) => void;
   labelW?: number;
 }) {
+  const [hoverSeg, setHoverSeg] = useState<string | null>(null);
   const max = Math.max(1, ...data.map((d) => d.count));
   return (
     <div className="hbars">
@@ -100,14 +103,27 @@ export function RoundStackedBars({ data, colorOf, labelW = 132 }: {
         <div key={d.key} className="hbar-row">
           <span className="hbar-label" style={{ width: labelW }}>{d.key}</span>
           <span className="hbar-track hbar-track-stack">
-            {d.segs.map((s) => (
-              <span
-                key={s.theme}
-                className="hbar-seg"
-                title={`${s.theme} ${s.count}笔`}
-                style={{ width: `${(s.count / max) * 100}%`, background: colorOf(s.theme) }}
-              />
-            ))}
+            {d.segs.map((s) => {
+              const segId = `${d.key}|${s.theme}`;
+              const dim = active != null && s.theme !== active;
+              return (
+                <span
+                  key={s.theme}
+                  className="hbar-seg"
+                  style={{ width: `${(s.count / max) * 100}%`, background: colorOf(s.theme), opacity: dim ? 0.15 : 1 }}
+                  onMouseEnter={() => { setHoverSeg(segId); onActive?.(s.theme); }}
+                  onMouseLeave={() => { setHoverSeg(null); onActive?.(null); }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const open = hoverSeg !== segId;
+                    setHoverSeg(open ? segId : null);
+                    onActive?.(open ? s.theme : null);
+                  }}
+                >
+                  {hoverSeg === segId && <span className="seg-tag">{s.theme} {s.count}笔</span>}
+                </span>
+              );
+            })}
           </span>
           <span className="hbar-val">{d.count} 笔</span>
           <span className="hbar-usd">{fmtUSDm(d.usdM)}</span>
@@ -117,9 +133,15 @@ export function RoundStackedBars({ data, colorOf, labelW = 132 }: {
   );
 }
 
-// ═══ ③ 题材环形图（悬停放大 + 图例同步联动） ════════════════════════════════
-export function ThemeDonut({ data, colorOf }: { data: Bucket[]; colorOf: (theme: string) => string }) {
-  const [active, setActive] = useState<number | null>(null);
+// ═══ ③ 题材环形图（受控联动：与轮次堆叠条共享 active 题材） ═══════════════
+export function ThemeDonut({ data, colorOf, active, onActive }: {
+  data: Bucket[];
+  colorOf: (theme: string) => string;
+  active?: string | null;
+  onActive?: (t: string | null) => void;
+}) {
+  const activeIdx = active == null ? null : data.findIndex((d) => d.key === active);
+  const setKey = (k: string | null) => onActive?.(k);
   const R = 62, CX = 86, CY = 86, TH = 20;
   const total = data.reduce((s, d) => s + d.count, 0) || 1;
   const segs = useMemo(() => {
@@ -139,7 +161,7 @@ export function ThemeDonut({ data, colorOf }: { data: Bucket[]; colorOf: (theme:
     <div className="donut-wrap">
       <svg viewBox="0 0 172 172" className="donut">
         {segs.map((s, i) => {
-          const on = active === i;
+          const on = activeIdx === i;
           const dx = on ? Math.cos(s.mid) * 7 : 0;
           const dy = on ? Math.sin(s.mid) * 7 : 0;
           return (
@@ -147,28 +169,30 @@ export function ThemeDonut({ data, colorOf }: { data: Bucket[]; colorOf: (theme:
               key={i}
               d={s.path}
               fill={colorOf(s.d.key)}
-              opacity={active === null || on ? 0.95 : 0.35}
+              opacity={activeIdx === null || activeIdx < 0 || on ? 0.95 : 0.3}
               transform={`translate(${dx},${dy})${on ? ` scale(1.04)` : ''}`}
               style={{ transformOrigin: '86px 86px', transition: 'transform 0.18s, opacity 0.18s', cursor: 'pointer' }}
-              onMouseEnter={() => setActive(i)}
-              onMouseLeave={() => setActive(null)}
+              onMouseEnter={() => setKey(s.d.key)}
+              onMouseLeave={() => setKey(null)}
+              onClick={() => setKey(on ? null : s.d.key)}
             />
           );
         })}
         <text x={CX} y={CY - 6} textAnchor="middle" fontSize="24" fill={IVORY} className="donut-num">
-          {active === null ? total : segs[active].d.count}
+          {activeIdx === null || activeIdx < 0 ? total : segs[activeIdx].d.count}
         </text>
         <text x={CX} y={CY + 14} textAnchor="middle" fontSize="9" fill={GRAY} letterSpacing="2">
-          {active === null ? '笔交易' : segs[active].d.key}
+          {activeIdx === null || activeIdx < 0 ? '笔交易' : segs[activeIdx].d.key}
         </text>
       </svg>
       <div className="donut-legend">
         {segs.map((s, i) => (
           <div
             key={i}
-            className={`donut-li ${active === i ? 'donut-li-on' : ''}`}
-            onMouseEnter={() => setActive(i)}
-            onMouseLeave={() => setActive(null)}
+            className={`donut-li ${activeIdx === i ? 'donut-li-on' : ''}`}
+            onMouseEnter={() => setKey(s.d.key)}
+            onMouseLeave={() => setKey(null)}
+            onClick={() => setKey(activeIdx === i ? null : s.d.key)}
           >
             <span className="donut-dot" style={{ background: colorOf(s.d.key) }} />
             <span className="donut-key">{s.d.key}</span>
