@@ -54,6 +54,33 @@ body {
   font-size: 28px; font-weight: 500;
   letter-spacing: 0.3em; color: var(--ivory);
 }
+
+/* 更多/缩小按钮 */
+.more-btn {
+  background: none; border: 1px solid var(--hairline); color: var(--gold);
+  font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em;
+  padding: 3px 10px; cursor: pointer; transition: all 0.2s;
+}
+.more-btn:hover { border-color: var(--gold); background: rgba(201,168,106,0.08); }
+
+/* 日期双模式：桌面完整 / 移动端年月 */
+.d-ym { display: none; }
+
+/* 项目搜索框 */
+.deal-search {
+  width: 100%; background: none; border: none; outline: none;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ivory); font-family: var(--sans); font-weight: 300;
+  font-size: 13px; letter-spacing: 0.06em;
+  padding: 4px 0 10px; margin-bottom: 10px;
+  caret-color: var(--gold);
+}
+.deal-search::placeholder { color: var(--gray); }
+.deal-search:focus { border-bottom-color: var(--gold); }
+
+/* 历史融资垂直条目 */
+.hist-item { display: flex; gap: 10px; align-items: baseline; padding: 3px 0; color: #CFC9BA; font-size: 12px; }
+.hist-dot { width: 5px; height: 5px; background: var(--gold); flex-shrink: 0; transform: translateY(-1px); }
 .brand-sub { color: var(--gray); font-size: 11px; letter-spacing: 0.14em; margin-top: 4px; }
 .brand-date { color: var(--gold); }
 .fnkeys { margin-left: auto; display: flex; gap: 8px; }
@@ -119,36 +146,15 @@ body {
 .hbar-ext { color: var(--gold-dim); font-size: 9px; margin-left: 3px; }
 
 /* 轮次堆叠条 */
-.hbar-track-stack { display: flex; height: 6px; overflow: hidden; }
-.hbar-seg { display: block; height: 100%; transition: opacity 0.15s; }
+.hbar-track-stack { display: flex; height: 6px; }
+.hbar-seg { display: block; height: 100%; transition: opacity 0.15s; position: relative; cursor: pointer; }
 .hbar-seg:hover { opacity: 0.75; }
-
-/* 更多/缩小按钮 */
-.more-btn {
-  background: none; border: 1px solid var(--hairline); color: var(--gold);
-  font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em;
-  padding: 3px 10px; cursor: pointer; transition: all 0.2s;
+.seg-tag {
+  position: absolute; bottom: 12px; left: 0; z-index: 6;
+  background: #121210; border: 1px solid var(--hairline);
+  color: var(--gold); font-size: 10px; letter-spacing: 0.06em;
+  padding: 2px 7px; white-space: nowrap; pointer-events: none;
 }
-.more-btn:hover { border-color: var(--gold); background: rgba(201,168,106,0.08); }
-
-/* 日期双模式：桌面完整 / 移动端年月 */
-.d-ym { display: none; }
-
-/* 项目搜索框 */
-.deal-search {
-  width: 100%; background: none; border: none; outline: none;
-  border-bottom: 1px solid var(--hairline);
-  color: var(--ivory); font-family: var(--sans); font-weight: 300;
-  font-size: 13px; letter-spacing: 0.06em;
-  padding: 4px 0 10px; margin-bottom: 10px;
-  caret-color: var(--gold);
-}
-.deal-search::placeholder { color: var(--gray); }
-.deal-search:focus { border-bottom-color: var(--gold); }
-
-/* 历史融资垂直条目 */
-.hist-item { display: flex; gap: 10px; align-items: baseline; padding: 3px 0; color: #CFC9BA; font-size: 12px; }
-.hist-dot { width: 5px; height: 5px; background: var(--gold); flex-shrink: 0; transform: translateY(-1px); }
 
 /* 环形图联动 */
 .donut-li { cursor: pointer; padding: 2px 4px; margin: 0 -4px; transition: background 0.15s; }
@@ -254,10 +260,22 @@ body {
   letter-spacing: 0.22em; color: var(--gold);
 }
 .modal-close {
-  margin-left: auto; background: none; border: none;
+  margin-left: 12px; background: none; border: none;
   color: var(--gray); font-size: 12px; cursor: pointer; padding: 2px;
 }
 .modal-close:hover { color: var(--gold); }
+.modal-idx { margin-left: auto; color: var(--gray); font-size: 10.5px; letter-spacing: 0.1em; }
+.modal-nav {
+  position: fixed; top: 50%; transform: translateY(-50%); z-index: 210;
+  width: 42px; height: 42px;
+  background: rgba(11,11,9,0.6); border: 1px solid var(--hairline);
+  color: var(--gold); font-size: 20px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; padding: 0 0 3px;
+}
+.modal-nav:hover { border-color: var(--gold); background: rgba(201,168,106,0.12); }
+.modal-nav-l { left: 26px; }
+.modal-nav-r { right: 26px; }
 .modal-body { padding: 16px 20px 18px; overflow-y: auto; }
 
 /* ── 状态栏 ── */
@@ -316,9 +334,10 @@ body {
   .hbar-usd { display: none; }
   .hbar-val { width: 36px; font-size: 10.5px; }
 
-  /* 弹窗：近全屏 */
+  /* 弹窗：近全屏；箭头隐藏（用滑动切换） */
   .modal-mask { padding: 0; align-items: stretch; }
   .modal { width: 100%; max-height: 100vh; border: none; }
+  .modal-nav { display: none; }
   .detail-co { font-size: 22px; }
   .detail-figures { gap: 24px; }
 
