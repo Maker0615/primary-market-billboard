@@ -1,0 +1,27 @@
+{
+  "id": 124,
+  "co": "Cloverleaf Bio",
+  "mkt": "US",
+  "date": "2026-09-08",
+  "round": "种子轮",
+  "theme": "生物科技",
+  "amt": "$3,300万",
+  "amtUSDm": 33,
+  "inv": [
+    "4BIO Capital",
+    "AbbVie Ventures",
+    "Eli Lilly",
+    "Boehringer Ingelheim Venture Fund",
+    "Draper Associates",
+    "Mission BioCapital",
+    "ACS BrightEdge"
+  ],
+  "investors": "4BIO Capital领投（超额认购），AbbVie Ventures、礼来、勃林格殷格翰风投三家大药企风投战略入局，Draper Associates、Mission BioCapital、美国癌症协会BrightEdge跟投",
+  "progress": "耶鲁大学spinout，康涅狄格州纽黑文；工程化tRNA载荷抗癌平台，选择性抑制癌细胞异常依赖的RNA修饰酶；先导CLB-001（抑制性tRNA）针对肝细胞癌推进早期临床，抗体-tRNA偶联物（ATC）针对结直肠癌；临床前显示对化疗及ADC耐药细胞系仍保持活性、HCC与肺腺癌模型中低于标准疗法剂量即优效；获NCI SBIR/STTR资助",
+  "links": [
+    {
+      "label": "GlobeNewswire 2026-09-08（英文源建议浏览器打开）",
+      "url": "https://www.globenewswire.com/news-release/2026/09/08/3357463/0/en/cloverleaf-bio-raises-33-million-seed-financing-to-advance-novel-rna-based-cancer-therapeutics.html"
+    }
+  ]
+}

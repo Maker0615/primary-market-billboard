@@ -1,0 +1,30 @@
+{
+  "id": 123,
+  "co": "Navion Neurosciences",
+  "mkt": "US",
+  "date": "2026-09-09",
+  "round": "种子轮",
+  "theme": "AI制药",
+  "amt": "$1,080万",
+  "amtUSDm": 10.8,
+  "inv": [
+    "Angelini Lumira Biosciences Fund",
+    "3B Future Health Fund",
+    "UVA LVG Seed Fund",
+    "VIPC",
+    "VTC Innovation Fund"
+  ],
+  "investors": "Angelini Lumira Biosciences Fund领投，3B Future Health Fund、UVA LVG Seed Fund、Virginia Innovation Partnership Corporation、VTC Innovation Fund及管理层参与（首次交割）",
+  "progress": "弗吉尼亚州夏洛茨维尔临床前biotech，开发精准钠通道药物治疗遗传性癫痫与慢性神经病理性疼痛；NaViGATion平台整合AI化学、结构生物学、人类疾病生物学与离子通道专长，针对神经元过度兴奋；创始CEO Andrew Krouse团队此前创立Cavion（2019年被Jazz Pharmaceuticals收购）",
+  "links": [
+    {
+      "label": "Business Wire 2026-09-09（英文源建议浏览器打开）",
+      "url": "https://www.businesswire.com/news/home/20260909773448/en/Navion-Neurosciences-Closes-%2410.8-Million-Seed-Financing-to-Advance-Precision-Sodium-Channel-Medicines-for-Epilepsy-and-Neuropathic-Pain"
+    },
+    {
+      "label": "Pulse 2.0 2026-09-11（英文源建议浏览器打开）",
+      "url": "https://pulse2.com/navion-neurosciences-raises-10-8-million-seed-to-develop-precision-medicines-for-epilepsy-and-neuropathic-pain/"
+    }
+  ],
+  "site": "https://navionneuro.com"
+}

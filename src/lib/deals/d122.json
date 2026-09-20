@@ -1,0 +1,32 @@
+{
+  "id": 122,
+  "co": "Ferry Health",
+  "mkt": "US",
+  "date": "2026-09-16",
+  "round": "种子轮",
+  "theme": "AI4AI",
+  "amt": "$900万",
+  "amtUSDm": 9,
+  "inv": [
+    "a16z",
+    "Index Ventures",
+    "Avid Ventures",
+    "Layout Ventures",
+    "SV Angel",
+    "Box Group",
+    "Asymmetric Capital"
+  ],
+  "investors": "Andreessen Horowitz（a16z）与Index Ventures领投，Avid Ventures、Layout Ventures、SV Angel、Box Group、Asymmetric Capital及Jay Desai、Grow Therapy/Hex/Chapter创始人等天使参与",
+  "progress": "2024年初创立（CEO Mehul Mehta与Keyur Mehta、Andrew Buie）；agentic AI患者个人助理：AI agent代替患者打电话，核实医生在网状态/亚专科匹配/可约时段并完成预约；通过与医疗系统、保险方、照护导航平台合作覆盖全美50州、超100万患者可用，预计年底增至500万+；早鸟客户已扩展至影像与居家健康协调",
+  "links": [
+    {
+      "label": "PR Newswire 2026-09-16（英文源建议浏览器打开）",
+      "url": "https://www.prnewswire.com/news-releases/ferry-health-launches-out-of-stealth-with-9m-in-funding-for-its-ai-powered-healthcare-personal-assistant-302880048.html"
+    },
+    {
+      "label": "Fierce Healthcare 2026-09-16（英文源建议浏览器打开）",
+      "url": "https://www.fiercehealthcare.com/health-tech/ferry-health-agentic-ai-scheduling-platform-backed-a16z-launches-stealth"
+    }
+  ],
+  "site": "https://ferry.health"
+}

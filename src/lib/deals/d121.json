@@ -1,0 +1,30 @@
+{
+  "id": 121,
+  "co": "Kairon Health",
+  "mkt": "US",
+  "date": "2026-09-15",
+  "round": "种子轮",
+  "theme": "大健康",
+  "amt": "$500万",
+  "amtUSDm": 5,
+  "inv": [
+    "Flare Capital Partners",
+    "Tau Ventures",
+    "Lightbank",
+    "General Advance",
+    "Pave Health Ventures"
+  ],
+  "investors": "Flare Capital Partners领投，Tau Ventures及老股东Lightbank、General Advance、Pave Health Ventures参与",
+  "progress": "纽约，AI原生价值医疗（VBC）执行层，服务ACO/医疗系统/IPA/MSO等；五大工作流云（Practice Intelligence/Care Operations/Patient Activation/Portfolio Management/Impact Analytics）打通理赔/临床/ADT/实验室/药房数据；已覆盖MSSP、ACO REACH、MA、Medicaid及商业合同超100万归属患者、30+州；CEO Nick Bartz曾在Aledade任职9年；HIPAA合规、SOC 2 Type II、NCQA PHM预认证；卡位2027年Medicare LEAD模型切换窗口",
+  "links": [
+    {
+      "label": "PR Newswire 2026-09-15（英文源建议浏览器打开）",
+      "url": "https://www.prnewswire.com/news-releases/kairon-health-raises-5-million-to-power-ai-driven-execution-in-value-based-care-302879484.html"
+    },
+    {
+      "label": "公司官网新闻页 2026-09-15（英文源建议浏览器打开）",
+      "url": "https://www.kaironhealth.com/news"
+    }
+  ],
+  "site": "https://kaironhealth.com"
+}
