@@ -1,0 +1,13 @@
+name: Cloudflare Pages auto-deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages deploy hook
+        run: curl -X POST -sS -o /dev/null -w "HTTP %{http_code}\n" "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/50fad43a-1363-4f2d-96b0-091bff40481e"
