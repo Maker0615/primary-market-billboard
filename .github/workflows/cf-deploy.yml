@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Cloudflare Pages deploy hook
-        run: curl -X POST -sS -o /dev/null -w "HTTP %{http_code}\n" "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/50fad43a-1363-4f2d-96b0-091bff40481e"
+        run: curl -X POST -sS -o /dev/null -w "HTTP %{http_code}\n" "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/4f15dcd0-3da8-4585-8253-494433b1ad57"
