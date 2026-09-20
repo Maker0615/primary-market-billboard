@@ -1,0 +1,34 @@
+{
+  "id": 127,
+  "co": "Generation Lab",
+  "mkt": "US",
+  "date": "2025-10-23",
+  "round": "种子轮",
+  "theme": "大健康",
+  "amt": "$1,100万",
+  "amtUSDm": 11,
+  "inv": [
+    "Accel",
+    "Samsung Next",
+    "Zone2",
+    "Aoki Labs",
+    "BYL Ventures",
+    "Markham Valley Ventures"
+  ],
+  "investors": "Accel领投（其首笔长寿领域投资，合伙人Kerry Wang操刀），Samsung Next、Zone2、Steve Aoki的Aoki Labs、字母哥Giannis Antetokounmpo的BYL Ventures、刘思慕的Markham Valley Ventures跟投；累计融资$1,500万",
+  "progress": "2023年成立于旧金山，创始人Alina Su（CEO，哈佛PhD辍学者）、Irina Conboy（UC Berkeley终身教授，「长寿之母」，异种共生抗衰研究先驱）、Michael Suswal（前独角兽Standard AI联创）；核心产品SystemAge™生物年龄检测平台，基于DNA甲基化衰老非线性曲线发现，从原始血液数据量化19个器官系统衰老程度，诊断准确率99.9%；上市不到一年签约全球275+诊所、积累3亿+人类衰老数据点，70%受测者生物年龄大于实际年龄；David Sinclair、George Church、Aubrey de Grey等长寿领域专家背书；跻身全球种子轮融资额前1%",
+  "links": [
+    {
+      "label": "Fortune独家 2025-10-23",
+      "url": "https://finance.yahoo.com/news/generation-lab-raises-11-million-111115294.html"
+    },
+    {
+      "label": "PR Newswire 2025-10-23",
+      "url": "https://www.prnewswire.com/news-releases/generation-lab-raises-11m-seed-round-as-systemage-becomes-worlds-fastest-growing-longevity-diagnostic-302592643.html"
+    },
+    {
+      "label": "Accel官方投资说明 2025-10-22",
+      "url": "https://www.accel.com/news/accel-seed-investment-in-generation-lab-future-of-longevity-care"
+    }
+  ]
+}
