@@ -1,0 +1,27 @@
+{
+  "id": 162,
+  "co": "Traversal",
+  "mkt": "US",
+  "date": "2026-11-03",
+  "round": "B轮",
+  "theme": "AI4AI",
+  "amt": "$1.2亿@投后$10亿",
+  "amtUSDm": 120,
+  "val": "投后约$10亿",
+  "inv": [
+    "Kleiner Perkins",
+    "Redpoint",
+    "Khosla"
+  ],
+  "investors": "KP/Redpoint/Khosla领投",
+  "progress": "AI SRE agent：因果ML自动诊断软件故障",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-04",
+      "url": "https://techstartups.com/2026/11/04"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $1.2亿@投后$10亿"
+  ]
+}

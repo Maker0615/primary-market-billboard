@@ -1,0 +1,25 @@
+{
+  "id": 158,
+  "co": "LangChain",
+  "mkt": "US",
+  "date": "2026-11-12",
+  "round": "C轮",
+  "theme": "AI4AI",
+  "amt": "$3亿@投后$30亿",
+  "amtUSDm": 300,
+  "val": "投后约$30亿",
+  "inv": [
+    "CapitalG"
+  ],
+  "investors": "CapitalG领投",
+  "progress": "Agent基础设施：LangSmith测试/观测/评估",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-13",
+      "url": "https://techstartups.com/2026/11/13"
+    }
+  ],
+  "hist": [
+    "2026 路 C轮 路 $3亿@投后$30亿"
+  ]
+}

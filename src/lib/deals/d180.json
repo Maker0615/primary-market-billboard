@@ -1,0 +1,26 @@
+{
+  "id": 180,
+  "co": "Avante AI",
+  "mkt": "US",
+  "date": "2026-10-30",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$3,000万",
+  "amtUSDm": 30,
+  "inv": [
+    "Frist Cressey",
+    "FUSE",
+    "Hearst Ventures"
+  ],
+  "investors": "Frist Cressey Ventures领投，FUSE/Hearst Ventures 跟投",
+  "progress": "员工健康福利AI",
+  "links": [
+    {
+      "label": "Avante 官方 2026-10",
+      "url": "https://www.avante.ai/articles/avante-raises-a-30m-series-a-led-by-frist-cressey-ventures"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $3,000万"
+  ]
+}

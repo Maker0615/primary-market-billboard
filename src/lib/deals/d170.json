@@ -1,0 +1,23 @@
+{
+  "id": 170,
+  "co": "Snorkel AI",
+  "mkt": "US",
+  "date": "2026-09-22",
+  "round": "未披露",
+  "theme": "AI4AI",
+  "amt": "$3.5亿@投后$35亿",
+  "amtUSDm": 350,
+  "val": "投后约$35亿",
+  "inv": [],
+  "investors": "未披露",
+  "progress": "AI训练数据自动化（标注→程序化数据→RL），收入增17x",
+  "links": [
+    {
+      "label": "TechStartups 2026-09-22",
+      "url": "https://techstartups.com/2026/09/22"
+    }
+  ],
+  "hist": [
+    "2026 路 未披露 路 $3.5亿@投后$35亿"
+  ]
+}

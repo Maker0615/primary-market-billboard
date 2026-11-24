@@ -1,0 +1,25 @@
+{
+  "id": 186,
+  "co": "Confido Health",
+  "mkt": "US",
+  "date": "2026-10-15",
+  "round": "A+轮",
+  "theme": "大健康",
+  "amt": "$1,250万",
+  "amtUSDm": 12.5,
+  "inv": [
+    "Blume",
+    "Together Fund"
+  ],
+  "investors": "Z47领投，A轮累计$22.5M",
+  "progress": "医疗运营自动化AI",
+  "links": [
+    {
+      "label": "Z47 官方",
+      "url": "https://www.z47.com/news/confido-health-raises-12-5m-agentic-healthcare"
+    }
+  ],
+  "hist": [
+    "2026 路 A+轮 路 $1,250万"
+  ]
+}

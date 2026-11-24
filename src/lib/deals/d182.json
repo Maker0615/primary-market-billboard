@@ -1,0 +1,26 @@
+{
+  "id": 182,
+  "co": "Midstream Health",
+  "mkt": "US",
+  "date": "2026-10-30",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$2,000万",
+  "amtUSDm": 20,
+  "inv": [
+    "a16z",
+    "CommonSpirit",
+    "Valtruis"
+  ],
+  "investors": "Valtruis领投，a16z/Foundry/CommonSpirit Ventures 跟投",
+  "progress": "医疗服务",
+  "links": [
+    {
+      "label": "MedCity News 2026-11",
+      "url": "https://medcitynews.com/2026/11/midstream-health-snags-20m-to-provide-health-systems-more-financial-stability/"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $2,000万"
+  ]
+}

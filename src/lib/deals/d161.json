@@ -1,0 +1,25 @@
+{
+  "id": 161,
+  "co": "Mount Thor",
+  "mkt": "US",
+  "date": "2026-11-12",
+  "round": "种子+A轮",
+  "theme": "AI4AI",
+  "amt": "合计$4,500万",
+  "amtUSDm": 45,
+  "inv": [
+    "CRV",
+    "Conviction"
+  ],
+  "investors": "CRV/Conviction领投(YC)",
+  "progress": "Apple芯片云，面向computer-use agent研发者",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-13",
+      "url": "https://techstartups.com/2026/11/13"
+    }
+  ],
+  "hist": [
+    "2026 路 种子+A轮 路 合计$4,500万"
+  ]
+}

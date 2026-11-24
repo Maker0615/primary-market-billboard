@@ -1,0 +1,24 @@
+{
+  "id": 168,
+  "co": "BlueCore Compute",
+  "mkt": "CN",
+  "date": "2026-10-12",
+  "round": "B轮",
+  "theme": "AI4AI",
+  "amt": "~¥20亿",
+  "amtUSDm": 278,
+  "inv": [
+    "深创投"
+  ],
+  "investors": "深创投等",
+  "progress": "RISC-V服务器CPU融合AI推理（LX500，联想整机）",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-12",
+      "url": "https://techstartups.com/2026/10/12"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 ~¥20亿"
+  ]
+}

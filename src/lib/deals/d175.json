@@ -1,0 +1,27 @@
+{
+  "id": 175,
+  "co": "Abby Care",
+  "mkt": "US",
+  "date": "2026-10-15",
+  "round": "C轮",
+  "theme": "大健康",
+  "amt": "$8,200万",
+  "amtUSDm": 82,
+  "inv": [
+    "CVS Health Ventures",
+    "Sequoia",
+    "Thrive",
+    "Transformation"
+  ],
+  "investors": "Transformation Capital领投，CVS Health Ventures/Sequoia/Thrive 跟投",
+  "progress": "护理AI/家庭照护者培训",
+  "links": [
+    {
+      "label": "HLTH 2026-10",
+      "url": "https://hlth.com/insights/news/abby-care-secures-82m-to-expand-family-caregiver-support-platform"
+    }
+  ],
+  "hist": [
+    "2026 路 C轮 路 $8,200万"
+  ]
+}

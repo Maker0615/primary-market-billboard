@@ -1,0 +1,26 @@
+{
+  "id": 153,
+  "co": "Marrow Therapeutics",
+  "mkt": "US",
+  "date": "2026-11-17",
+  "round": "A+B轮",
+  "theme": "生物科技",
+  "amt": "合计$1.73亿",
+  "amtUSDm": 173,
+  "inv": [
+    "Scion",
+    "venBio",
+    "OrbiMed"
+  ],
+  "investors": "A$53M Scion/venBio；B$120M OrbiMed",
+  "progress": "骨髓靶向基因药",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-17",
+      "url": "https://techstartups.com/2026/11/17"
+    }
+  ],
+  "hist": [
+    "2026 路 A+B轮 路 合计$1.73亿"
+  ]
+}

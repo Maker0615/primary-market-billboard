@@ -1,0 +1,24 @@
+{
+  "id": 151,
+  "co": "VitriVax",
+  "mkt": "US",
+  "date": "2026-11-18",
+  "round": "C轮",
+  "theme": "生物科技",
+  "amt": "$8,700万",
+  "amtUSDm": 87,
+  "inv": [
+    "F-Prime"
+  ],
+  "investors": "F-Prime/NEA/RA/Sanofi Ventures领投",
+  "progress": "疫苗",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-18",
+      "url": "https://techstartups.com/2026/11/18"
+    }
+  ],
+  "hist": [
+    "2026 路 C轮 路 $8,700万"
+  ]
+}

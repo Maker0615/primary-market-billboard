@@ -1,0 +1,25 @@
+{
+  "id": 178,
+  "co": "Allara",
+  "mkt": "US",
+  "date": "2026-10-15",
+  "round": "未披露(累计$75M)",
+  "theme": "大健康",
+  "amt": "$3,000万",
+  "amtUSDm": 30,
+  "inv": [
+    "Index",
+    "GV"
+  ],
+  "investors": "Index Ventures领投，GV 跟投增持",
+  "progress": "女性激素健康虚拟医疗+AI",
+  "links": [
+    {
+      "label": "Fierce Healthcare 2026-10",
+      "url": "https://www.fiercehealthcare.com/finance/allara-raises-30m-expand-virtual-womens-healthcare-across-continuum"
+    }
+  ],
+  "hist": [
+    "2026 路 未披露(累计$75M) 路 $3,000万"
+  ]
+}

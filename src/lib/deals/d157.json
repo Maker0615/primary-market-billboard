@@ -1,0 +1,25 @@
+{
+  "id": 157,
+  "co": "Mirendil",
+  "mkt": "US",
+  "date": "2026-11-12",
+  "round": "A轮",
+  "theme": "AI4AI",
+  "amt": "$10亿",
+  "amtUSDm": 1000,
+  "inv": [
+    "Kleiner Perkins",
+    "Clearlake"
+  ],
+  "investors": "KP/Clearlake联合领投",
+  "progress": "AI Scientist：多agent自动化前沿研究，低成本训练coding模型",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-13",
+      "url": "https://techstartups.com/2026/11/13"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $10亿"
+  ]
+}

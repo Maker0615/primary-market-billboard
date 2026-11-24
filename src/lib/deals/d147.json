@@ -1,0 +1,23 @@
+{
+  "id": 147,
+  "co": "Atlas Bio",
+  "mkt": "CH",
+  "date": "2026-10-27",
+  "round": "种子轮",
+  "theme": "AI4S",
+  "dir": "AI制药",
+  "amt": "$1,000万",
+  "amtUSDm": 10,
+  "inv": [],
+  "investors": "领投方待披露",
+  "progress": "药物决策模拟，瑞士",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-27",
+      "url": "https://techstartups.com/2026/10/27"
+    }
+  ],
+  "hist": [
+    "2026 路 种子轮 路 $1,000万"
+  ]
+}

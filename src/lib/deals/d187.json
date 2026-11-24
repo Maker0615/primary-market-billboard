@@ -1,0 +1,25 @@
+{
+  "id": 187,
+  "co": "Parakeet Health",
+  "mkt": "US",
+  "date": "2026-10-02",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$1,000万",
+  "amtUSDm": 10,
+  "inv": [
+    "Blank Ventures",
+    "Canvas Prime"
+  ],
+  "investors": "Canvas Ventures领投，Blank Ventures 跟投",
+  "progress": "医疗机构AI呼叫中心",
+  "links": [
+    {
+      "label": "The SaaS News 2026-10",
+      "url": "https://www.thesaasnews.com/news/parakeet-health-raises-10m-series-a/"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $1,000万"
+  ]
+}

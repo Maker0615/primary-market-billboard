@@ -1,0 +1,24 @@
+{
+  "id": 152,
+  "co": "Ansa Biotechnologies",
+  "mkt": "US",
+  "date": "2026-11-18",
+  "round": "C轮",
+  "theme": "生物科技",
+  "amt": "$7,150万",
+  "amtUSDm": 71.5,
+  "inv": [
+    "Blue Water Life Science Advisors"
+  ],
+  "investors": "Blue Water LS领投",
+  "progress": "DNA合成/合成生物",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-18",
+      "url": "https://techstartups.com/2026/11/18"
+    }
+  ],
+  "hist": [
+    "2026 路 C轮 路 $7,150万"
+  ]
+}

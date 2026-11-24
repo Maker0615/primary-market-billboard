@@ -1,0 +1,24 @@
+{
+  "id": 145,
+  "co": "Soufflé Therapeutics",
+  "mkt": "US",
+  "date": "2026-10-13",
+  "round": "B轮",
+  "theme": "生物科技",
+  "amt": "$1.35亿",
+  "amtUSDm": 135,
+  "inv": [
+    "Juvia Group"
+  ],
+  "investors": "Juvia Group领投",
+  "progress": "RNA疗法",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-13",
+      "url": "https://techstartups.com/2026/10/13"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $1.35亿"
+  ]
+}

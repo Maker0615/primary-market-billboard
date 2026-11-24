@@ -1,0 +1,24 @@
+{
+  "id": 166,
+  "co": "Salience Labs",
+  "mkt": "UK",
+  "date": "2026-10-14",
+  "round": "B轮",
+  "theme": "AI4AI",
+  "amt": "$1.25亿",
+  "amtUSDm": 125,
+  "inv": [
+    "Bullhound"
+  ],
+  "investors": "Bullhound(AMD/Intel Capital)领投",
+  "progress": "AI集群光互连芯片（64/128/256端口OCS），英国",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-15",
+      "url": "https://techstartups.com/2026/10/15"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $1.25亿"
+  ]
+}

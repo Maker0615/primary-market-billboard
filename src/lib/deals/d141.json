@@ -1,0 +1,24 @@
+{
+  "id": 141,
+  "co": "ArkeaBio",
+  "mkt": "US",
+  "date": "2026-09-30",
+  "round": "A2轮",
+  "theme": "生物科技",
+  "amt": "$1,500万",
+  "amtUSDm": 15,
+  "inv": [
+    "AgriZeroNZ"
+  ],
+  "investors": "AgriZeroNZ领投",
+  "progress": "牲畜甲烷疫苗",
+  "links": [
+    {
+      "label": "TechStartups 2026-09-30",
+      "url": "https://techstartups.com/2026/09/30"
+    }
+  ],
+  "hist": [
+    "2026 路 A2轮 路 $1,500万"
+  ]
+}

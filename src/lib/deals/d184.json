@@ -1,0 +1,25 @@
+{
+  "id": 184,
+  "co": "Clarity Care AI",
+  "mkt": "US",
+  "date": "2026-10-30",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$1,630万",
+  "amtUSDm": 16.3,
+  "inv": [
+    "Arthur Ventures",
+    "Maverick"
+  ],
+  "investors": "Headline领投（待复核），Arthur Ventures/Maverick 跟投",
+  "progress": "医疗AI文书/护理协调",
+  "links": [
+    {
+      "label": "FireRound 跟踪",
+      "url": "https://fireround.dev/companies/claritycare"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $1,630万"
+  ]
+}

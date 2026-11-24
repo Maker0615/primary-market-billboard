@@ -1,0 +1,25 @@
+{
+  "id": 165,
+  "co": "共绩科技",
+  "mkt": "CN",
+  "date": "2026-11-03",
+  "round": "数亿元",
+  "theme": "AI4AI",
+  "amt": "数亿元",
+  "amtUSDm": 50,
+  "inv": [
+    "中网投",
+    "宁德时代系"
+  ],
+  "investors": "中网投/宁德时代系",
+  "progress": "分布式闲置GPU算力调度平台，ARR超¥2亿",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-03",
+      "url": "https://techstartups.com/2026/11/03"
+    }
+  ],
+  "hist": [
+    "2026 路 数亿元 路 数亿元"
+  ]
+}

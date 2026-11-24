@@ -1,0 +1,24 @@
+{
+  "id": 144,
+  "co": "Multiply Labs",
+  "mkt": "US",
+  "date": "2026-10-06",
+  "round": "B轮",
+  "theme": "生物科技",
+  "amt": "$7,500万",
+  "amtUSDm": 75,
+  "inv": [
+    "NantWorks"
+  ],
+  "investors": "NantWorks(Soon-Shiong)领投",
+  "progress": "细胞/基因疗法生产机器人",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-06",
+      "url": "https://techstartups.com/2026/10/06"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $7,500万"
+  ]
+}

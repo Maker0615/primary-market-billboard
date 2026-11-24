@@ -1,0 +1,26 @@
+{
+  "id": 163,
+  "co": "灵川科技",
+  "mkt": "CN",
+  "date": "2026-11-04",
+  "round": "B轮",
+  "theme": "AI4AI",
+  "amt": "¥10亿",
+  "amtUSDm": 139,
+  "inv": [
+    "亦庄盛和",
+    "启明",
+    "朝辉"
+  ],
+  "investors": "亦庄盛和/启明/朝辉",
+  "progress": "视频生成/转码专用AI芯片（快手孵化，SL200已售近10万片）",
+  "links": [
+    {
+      "label": "TechStartups 引36氪 2026-11-04",
+      "url": "https://techstartups.com/2026/11/04"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 ¥10亿"
+  ]
+}

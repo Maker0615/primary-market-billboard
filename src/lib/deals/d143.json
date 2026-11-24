@@ -1,0 +1,25 @@
+{
+  "id": 143,
+  "co": "WhiteLab Genomics",
+  "mkt": "FR",
+  "date": "2026-10-06",
+  "round": "B轮",
+  "theme": "AI4S",
+  "dir": "AI制药",
+  "amt": "$2,600万",
+  "amtUSDm": 26,
+  "inv": [
+    "AVP"
+  ],
+  "investors": "AVP领投",
+  "progress": "基因药物递送AI，法国",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-06",
+      "url": "https://techstartups.com/2026/10/06"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $2,600万"
+  ]
+}

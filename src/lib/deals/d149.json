@@ -1,0 +1,24 @@
+{
+  "id": 149,
+  "co": "T-Therapeutics",
+  "mkt": "UK",
+  "date": "2026-11-05",
+  "round": "B轮",
+  "theme": "生物科技",
+  "amt": "$1.33亿",
+  "amtUSDm": 133,
+  "inv": [
+    "Advent Life Sciences"
+  ],
+  "investors": "Advent Life Sciences/英国商业银行领投",
+  "progress": "TCR，英国",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-09",
+      "url": "https://techstartups.com/2026/11/09"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $1.33亿"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": 172,
+  "co": "Plato",
+  "mkt": "US",
+  "date": "2026-10-28",
+  "round": "A轮",
+  "theme": "AI4AI",
+  "amt": "$1,600万",
+  "amtUSDm": 16,
+  "inv": [
+    "Nava Ventures"
+  ],
+  "investors": "Nava Ventures领投(Gradient/微软AI CEO Suleyman个人)",
+  "progress": "模拟工作环境训练+评估企业AI agent",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-29",
+      "url": "https://techstartups.com/2026/10/29"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $1,600万"
+  ]
+}

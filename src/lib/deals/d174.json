@@ -1,0 +1,26 @@
+{
+  "id": 174,
+  "co": "General Medicine",
+  "mkt": "US",
+  "date": "2026-10-06",
+  "round": "B轮",
+  "theme": "大健康",
+  "amt": "$1.2亿",
+  "amtUSDm": 120,
+  "inv": [
+    "a16z",
+    "礼来基金会",
+    "BoxGroup"
+  ],
+  "investors": "Andreessen Horowitz (a16z)领投，Matrix/VXI Capital/Eli Lilly/Mercy Health/BoxGroup 跟投",
+  "progress": "线上全科+专科医疗服务",
+  "links": [
+    {
+      "label": "General Medicine 官方 2026-10",
+      "url": "https://generalmedicine.co/resources/general-medicine-raises-120-million-to-build-the-healthcare-store"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $1.2亿"
+  ]
+}

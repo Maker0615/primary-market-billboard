@@ -1,0 +1,27 @@
+{
+  "id": 177,
+  "co": "Knit Health",
+  "mkt": "US",
+  "date": "2026-11-18",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$3,500万",
+  "amtUSDm": 35,
+  "inv": [
+    "NEA",
+    "SignalFire",
+    "Frist Cressey",
+    "Uncork"
+  ],
+  "investors": "NEA领投，SignalFire/Frist Cressey/Uncork 跟投",
+  "progress": "医疗AI护理协调/临床运营",
+  "links": [
+    {
+      "label": "citybiz 2026-11",
+      "url": "https://www.citybiz.co/article/933986/knit-health-raises-35m-series-a-led-by-nea/"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $3,500万"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": 183,
+  "co": "XpertDox",
+  "mkt": "US",
+  "date": "2026-11-13",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$2,000万",
+  "amtUSDm": 20,
+  "inv": [
+    "Kennet Partners",
+    "Savant Growth"
+  ],
+  "investors": "Savant Growth领投，Kennet Partners 跟投",
+  "progress": "AI医疗编码/收入周期",
+  "links": [
+    {
+      "label": "XpertDox 官方",
+      "url": "https://www.xpertdox.com/news/xpertdox-raises-20m-for-ai-medical-coding-from-savant-growth/"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $2,000万"
+  ]
+}

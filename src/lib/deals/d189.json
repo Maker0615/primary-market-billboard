@@ -1,0 +1,27 @@
+{
+  "id": 189,
+  "co": "BigHat Biosciences",
+  "mkt": "US",
+  "date": "2026-09-24",
+  "round": "C轮",
+  "theme": "AI4S",
+  "dir": "AI制药",
+  "amt": "$7,500万",
+  "amtUSDm": 75,
+  "inv": [
+    "a16z",
+    "8VC",
+    "DFJ Growth"
+  ],
+  "investors": "a16z/8VC/DFJ Growth等",
+  "progress": "AI抗体设计",
+  "links": [
+    {
+      "label": "BigHat 官网 2026-09-24",
+      "url": "https://bighatbio.com/news"
+    }
+  ],
+  "hist": [
+    "2026 路 C轮 路 $7,500万"
+  ]
+}

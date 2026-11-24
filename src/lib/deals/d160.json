@@ -1,0 +1,24 @@
+{
+  "id": 160,
+  "co": "Luminal",
+  "mkt": "US",
+  "date": "2026-11-12",
+  "round": "A轮",
+  "theme": "AI4AI",
+  "amt": "$2,500万",
+  "amtUSDm": 25,
+  "inv": [
+    "Standard Capital"
+  ],
+  "investors": "Standard Capital领投(YC)",
+  "progress": "跨芯片AI推理编译器",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-13",
+      "url": "https://techstartups.com/2026/11/13"
+    }
+  ],
+  "hist": [
+    "2026 路 A轮 路 $2,500万"
+  ]
+}

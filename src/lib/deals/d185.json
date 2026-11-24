@@ -1,0 +1,26 @@
+{
+  "id": 185,
+  "co": "August AI",
+  "mkt": "US",
+  "date": "2026-11-18",
+  "round": "未披露(部分库记A轮)",
+  "theme": "大健康",
+  "amt": "$1,200万",
+  "amtUSDm": 12,
+  "inv": [
+    "Accel",
+    "Peak XV",
+    "Claypond"
+  ],
+  "investors": "Accel/Peak XV/Claypond Capital 联合领投",
+  "progress": "消费者健康AI（症状/用药/化验）",
+  "links": [
+    {
+      "label": "Dealroom 2026-11",
+      "url": "https://dealroom.co/news/173408-august-ai-raises-12m-to-let-an-ai-agent-fight-healthcare-bureaucracy/"
+    }
+  ],
+  "hist": [
+    "2026 路 未披露(部分库记A轮) 路 $1,200万"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 176,
+  "co": "Charta Health",
+  "mkt": "US",
+  "date": "2026-11-13",
+  "round": "B轮",
+  "theme": "大健康",
+  "amt": "$5,500万",
+  "amtUSDm": 55,
+  "inv": [],
+  "investors": "Insight Partners领投",
+  "progress": "AI病历审查（风险调整/RCC）",
+  "links": [
+    {
+      "label": "Charta Health 官方",
+      "url": "https://www.chartahealth.com/resources/charta-series-b"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $5,500万"
+  ]
+}

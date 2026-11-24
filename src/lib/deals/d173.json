@@ -1,0 +1,24 @@
+{
+  "id": 173,
+  "co": "Hyperbolic",
+  "mkt": "US",
+  "date": "2026-10-27",
+  "round": "未披露",
+  "theme": "AI4AI",
+  "amt": "$3,000万",
+  "amtUSDm": 30,
+  "inv": [
+    "Walden Catalyst"
+  ],
+  "investors": "Walden Catalyst(英特尔CEO陈立武系)领投",
+  "progress": "全球分布式GPU算力网格",
+  "links": [
+    {
+      "label": "TechStartups 2026-10-27",
+      "url": "https://techstartups.com/2026/10/27"
+    }
+  ],
+  "hist": [
+    "2026 路 未披露 路 $3,000万"
+  ]
+}

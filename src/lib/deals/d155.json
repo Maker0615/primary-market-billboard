@@ -1,0 +1,25 @@
+{
+  "id": 155,
+  "co": "Sanrise 昂拓生物",
+  "mkt": "CN",
+  "date": "2026-11-23",
+  "round": "B轮",
+  "theme": "生物科技",
+  "amt": "$5,500万",
+  "amtUSDm": 55,
+  "inv": [
+    "鸿晖资本",
+    "龙磐投资"
+  ],
+  "investors": "鸿晖资本/龙磐投资领投",
+  "progress": "寡核苷酸药",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-23",
+      "url": "https://techstartups.com/2026/11/23"
+    }
+  ],
+  "hist": [
+    "2026 路 B轮 路 $5,500万"
+  ]
+}

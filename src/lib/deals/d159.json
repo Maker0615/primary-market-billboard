@@ -1,0 +1,25 @@
+{
+  "id": 159,
+  "co": "Kindo",
+  "mkt": "US",
+  "date": "2026-11-12",
+  "round": "未标轮次",
+  "theme": "AI4AI",
+  "amt": "$3,000万",
+  "amtUSDm": 30,
+  "inv": [
+    "Crosspoint",
+    "Forgepoint"
+  ],
+  "investors": "Crosspoint/Forgepoint领投",
+  "progress": "企业AI agent治理/安全控制层，ARR增800%",
+  "links": [
+    {
+      "label": "TechStartups 2026-11-13",
+      "url": "https://techstartups.com/2026/11/13"
+    }
+  ],
+  "hist": [
+    "2026 路 未标轮次 路 $3,000万"
+  ]
+}
