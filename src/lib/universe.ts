@@ -9,7 +9,24 @@ const dealGlob = import.meta.glob('./deals/d*.json', { eager: true }) as Record<
 
 export const DATA_ASOF: string = metaGlob['./deals/meta.json'].default.asOf;
 
-export type Theme = '生物科技' | 'AI制药' | 'AI4S' | 'AI4AI' | '大健康' | '脑机接口';
+export type Theme = 'AI4S' | 'AI4AI' | '生物科技' | '大健康' | '脑机接口';
+
+// AI4S 细分方向（AI4S 为一级类别，AI制药并入其中）
+export type ScienceDir = 'AI制药' | '虚拟细胞' | '生命健康·医疗本体' | '泛科学智能';
+export const SCIENCE_DIRS: ScienceDir[] = ['AI制药', '虚拟细胞', '生命健康·医疗本体', '泛科学智能'];
+
+// 兼容旧数据：theme 为 AI制药 的记录自动归入 AI4S/AI制药
+export function dealTheme(d: Pick<Deal, 'theme' | 'dir'>): Theme {
+  return d.theme === ('AI制药' as string) ? 'AI4S' : d.theme;
+}
+export function dealDir(d: Pick<Deal, 'theme' | 'dir'>): ScienceDir | undefined {
+  if (d.dir) return d.dir;
+  return d.theme === ('AI制药' as string) ? 'AI制药' : undefined;
+}
+export function themeLabel(d: Pick<Deal, 'theme' | 'dir'>): string {
+  const dir = dealDir(d);
+  return dir ? `${dealTheme(d)}·${dir}` : dealTheme(d);
+}
 
 export interface NewsLink { label: string; url: string }
 
@@ -20,6 +37,7 @@ export interface Deal {
   date: string;
   round: string;
   theme: Theme;
+  dir?: ScienceDir;   // AI4S 细分方向：AI制药 / 虚拟细胞 / 生命健康·医疗本体 / 泛科学智能
   amt: string;        // 披露口径金额
   amtUSDm: number;    // 折算美元（百万），用于统计
   val?: string;       // 本轮估值（公开披露口径）；缺失时按股比稀释10%推算投后

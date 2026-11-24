@@ -1,5 +1,5 @@
 // ── 一级市场交易四维统计聚合 ────────────────────────────────────────────────
-import { DEALS, type Deal } from './universe';
+import { DEALS, type Deal, dealTheme, dealDir, SCIENCE_DIRS } from './universe';
 
 export interface Bucket { key: string; count: number; usdM: number }
 export interface QuarterPoint { q: string; count: number; usdM: number }
@@ -59,14 +59,27 @@ export function byRound(): Bucket[] {
   return ROUND_ORDER.map((k) => m.get(k) ?? { key: k, count: 0, usdM: 0 });
 }
 
-// ③ 题材数量统计
+// ③ 题材数量统计（AI4S 为合并口径，AI制药已并入）
 export function byTheme(): Bucket[] {
   const m = new Map<string, Bucket>();
   for (const d of DEALS) {
-    const b = m.get(d.theme) ?? { key: d.theme, count: 0, usdM: 0 };
-    b.count++; b.usdM += d.amtUSDm; m.set(d.theme, b);
+    const t = dealTheme(d);
+    const b = m.get(t) ?? { key: t, count: 0, usdM: 0 };
+    b.count++; b.usdM += d.amtUSDm; m.set(t, b);
   }
   return [...m.values()].sort((a, b) => b.count - a.count || b.usdM - a.usdM);
+}
+
+// ③b AI4S 细分方向统计（AI制药 / 虚拟细胞 / 生命健康·医疗本体 / 泛科学智能）
+export function byScienceDir(): Bucket[] {
+  const m = new Map<string, Bucket>();
+  for (const d of DEALS) {
+    const dir = dealDir(d);
+    if (!dir) continue;
+    const b = m.get(dir) ?? { key: dir, count: 0, usdM: 0 };
+    b.count++; b.usdM += d.amtUSDm; m.set(dir, b);
+  }
+  return SCIENCE_DIRS.map((k) => m.get(k) ?? { key: k, count: 0, usdM: 0 });
 }
 
 // ④ 活跃投资机构（按参与交易笔数，附官网链接）
@@ -150,7 +163,10 @@ export function roundThemeMix(themeOrder: string[]): RoundMix[] {
   return byRound().map((r) => {
     const m = new Map<string, number>();
     for (const d of DEALS) {
-      if (roundBucket(d) === r.key) m.set(d.theme, (m.get(d.theme) ?? 0) + 1);
+      if (roundBucket(d) === r.key) {
+        const t = dealTheme(d);
+        m.set(t, (m.get(t) ?? 0) + 1);
+      }
     }
     const segs = themeOrder
       .filter((t) => m.has(t))

@@ -21,7 +21,8 @@ const API_URL = `${BASE_URL}/chat/completions`;
 const MODEL = BASE_URL.includes('coding')
   ? 'kimi-for-coding'
   : (process.env.MOONSHOT_MODEL || 'kimi-k2-0905-preview');
-const ALLOWED_THEMES = ['AI4S', 'AI4AI', 'AI制药', '生物科技', '大健康', '脑机接口'];
+const ALLOWED_THEMES = ['AI4S', 'AI4AI', '生物科技', '大健康', '脑机接口'];
+const ALLOWED_DIRS = ['AI制药', '虚拟细胞', '生命健康·医疗本体', '泛科学智能'];
 const ALLOWED_MKT = ['CN', 'US', 'CN/US'];
 
 const todayCN = () =>
@@ -47,7 +48,8 @@ const SYSTEM_PROMPT = `你是一级市场融资交易的数据采集员。今天
 任务：全网检索过去 7 天美国、中国新披露的融资交易，并复核既有样本的重大进展（新轮次、IPO、并购、临床里程碑）。
 
 收录范围（全部条件必须满足）：
-- 题材仅限：AI4S（AI for Science）、AI4AI（Agent 为主的 AI 应用，非基础设施）、AI制药、生物科技、大健康、脑机接口。不收 AI+/具身智能/AI基础设施，不收港股（HK）市场，不收 2025 年之前的交易
+- 题材仅限：AI4S（AI for Science，含细分方向 dir：AI制药 / 虚拟细胞 / 生命健康·医疗本体 / 泛科学智能）、AI4AI（Agent 为主的 AI 应用，非基础设施）、生物科技、大健康、脑机接口。不收 AI+/具身智能/AI基础设施，不收港股（HK）市场，不收 2025 年之前的交易
+- AI4S 交易必须给出 dir 字段标明细分方向；AI制药已并入 AI4S，不再作为独立题材
 - 轮次不限，但重点关注种子轮/天使轮/A轮早期交易
 - 每笔必须有可验证的公开报道/公告链接（中文交易优先 36氪/腾讯/新浪/网易/亿欧/微信公众号原文 mp.weixin.qq.com；海外交易用英文原始源；财新标注付费墙）
 - 信源渠道：网页公开报道、微信公众号（elsewhere别处发生、DeepTech深科技、BioTender 观测日志、36氪/投中/动脉网/医药魔方等，经搜狗微信检索）、Y Combinator 各批次名录、YZi Labs、Fierce Biotech 融资追踪、BioBucks、PR Newswire、Business Wire、公司官方博客、SEC Form D、FinSMEs、PitchBook 档案、WSGR AI医疗交易周报
@@ -58,7 +60,8 @@ const SYSTEM_PROMPT = `你是一级市场融资交易的数据采集员。今天
   "newDeals": [
     {
       "co": "公司名", "mkt": "CN|US|CN/US", "date": "YYYY-MM-DD", "round": "轮次",
-      "theme": "六类题材之一", "amt": "披露口径金额（如 ¥3.3亿 / $4,000万）",
+      "theme": "五类题材之一", "dir": "仅 AI4S 需要：AI制药|虚拟细胞|生命健康·医疗本体|泛科学智能",
+      "amt": "披露口径金额（如 ¥3.3亿 / $4,000万）",
       "amtUSDm": 折算美元百万数字, "val": "本轮估值（公开口径，无则省略此字段）",
       "inv": ["机构名"], "investors": "机构描述", "progress": "项目方发展情况一句话",
       "links": [{ "label": "来源名+日期", "url": "https://..." }]
@@ -125,6 +128,8 @@ function validateDeal(d) {
   if (!d || typeof d.co !== 'string' || !d.co.trim()) return false;
   if (!ALLOWED_MKT.includes(d.mkt)) return false;
   if (!ALLOWED_THEMES.includes(d.theme)) return false;
+  if (d.theme === 'AI4S' && !ALLOWED_DIRS.includes(d.dir)) return false;
+  if (d.dir && !ALLOWED_DIRS.includes(d.dir)) return false;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(d.date)) return false;
   if (d.date < '2025-01-01' || d.date > todayCN()) return false;
   if (typeof d.amt !== 'string' || !d.amt) return false;

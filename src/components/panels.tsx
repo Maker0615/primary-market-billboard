@@ -1,13 +1,14 @@
 // ── 面板组件：四维统计 / 一级市场交易 / 详情 / 数据源 ───────────────────────
 import { useEffect, useMemo, useState } from 'react';
-import { DEALS, DATA_ASOF, dealValuation, type Deal, type Theme } from '../lib/universe';
-import { quarterly, byTheme, topInvestors, totalUSDm, roundThemeMix } from '../lib/stats';
+import { DEALS, DATA_ASOF, dealValuation, dealTheme, dealDir, themeLabel, type Deal } from '../lib/universe';
+import { quarterly, byTheme, byScienceDir, topInvestors, totalUSDm, roundThemeMix } from '../lib/stats';
 import { QuarterlyChart, HBars, RoundStackedBars, ThemeDonut, ChartCard, GOLD, IVORY, GRAY, DONUT_COLORS } from './charts';
 
 // ═══ 四维统计 ═══════════════════════════════════════════════════════════════
 export function StatsPanel() {
   const q = useMemo(quarterly, []);
   const themes = useMemo(byTheme, []);
+  const dirs = useMemo(byScienceDir, []);
   const themeOrder = useMemo(() => themes.map((t) => t.key), [themes]);
   const colorOf = useMemo(() => {
     return (t: string) => DONUT_COLORS[Math.max(0, themeOrder.indexOf(t)) % DONUT_COLORS.length];
@@ -31,6 +32,9 @@ export function StatsPanel() {
       </ChartCard>
       <ChartCard no="03" title="题材分布">
         <ThemeDonut data={themes} colorOf={colorOf} active={activeTheme} onActive={setActiveTheme} />
+        <div className="chart-foot">
+          AI4S 细分：{dirs.map((b) => `${b.key} ${b.count}笔`).join(' · ')}
+        </div>
       </ChartCard>
       <ChartCard no="04" title="活跃投资机构" sub={`按参与样本交易笔数排名${invAll ? '（全部）' : ' TOP10'}`}>
         <HBars data={investors} labelW={150} />
@@ -46,7 +50,16 @@ export function StatsPanel() {
 }
 
 // ═══ 一级市场交易 ════════════════════════════════════════════════════════════
-const THEMES: Array<Theme | '全部'> = ['全部', 'AI4S', 'AI4AI', 'AI制药', '生物科技', '大健康', '脑机接口'];
+// 一级分类页签 + AI4S 细分方向页签（AI制药并入 AI4S，不再单独成类）
+const THEME_TABS = ['全部', 'AI4S', '虚拟细胞', '生命健康·医疗本体', 'AI4AI', '生物科技', '大健康', '脑机接口'] as const;
+const SUB_DIR_TABS: readonly string[] = ['虚拟细胞', '生命健康·医疗本体'];
+
+function matchThemeTab(d: Deal, f: string): boolean {
+  if (f === '全部') return true;
+  const t = dealTheme(d);
+  if (SUB_DIR_TABS.includes(f)) return t === 'AI4S' && dealDir(d) === f;
+  return t === f;
+}
 
 export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
   onSelect: (d: Deal) => void; selected: number | null;
@@ -64,13 +77,14 @@ export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
   }, []);
   const rows = useMemo(() => {
     let r = [...DEALS].sort((a, b) => b.date.localeCompare(a.date));
-    if (filter !== '全部') r = r.filter((d) => d.theme === filter);
+    if (filter !== '全部') r = r.filter((d) => matchThemeTab(d, filter));
     if (mkt !== '全部') r = r.filter((d) => d.mkt === mkt || d.mkt.includes(mkt));
     if (!showAll) r = r.filter((d) => d.date >= cutoff);
     const q = query.trim().toLowerCase();
     if (q) r = r.filter((d) =>
       d.co.toLowerCase().includes(q) || d.investors.toLowerCase().includes(q) ||
-      d.inv.some((n) => n.toLowerCase().includes(q)) || d.theme.includes(query.trim())
+      d.inv.some((n) => n.toLowerCase().includes(q)) || d.theme.includes(query.trim()) ||
+      (d.dir ?? '').includes(query.trim())
     );
     return r;
   }, [filter, mkt, showAll, cutoff, query]);
@@ -88,7 +102,7 @@ export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
         spellCheck={false}
       />
       <div className="tabs" style={{ flexWrap: 'wrap' }}>
-        {THEMES.map((t) => (
+        {THEME_TABS.map((t) => (
           <button key={t} className={`tab ${filter === t ? 'tab-on' : ''}`} onClick={() => setFilter(t)}>{t}</button>
         ))}
       </div>
@@ -114,7 +128,7 @@ export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
               <span className="c-co ellipsis" style={{ color: IVORY }}>{d.co}</span>
               <span className="c-mkt hide-sm" style={{ color: GRAY }}>{d.mkt}</span>
               <span className="c-round ellipsis" style={{ color: GOLD }}>{d.round}</span>
-              <span className="c-theme hide-sm ellipsis">{d.theme}</span>
+              <span className="c-theme hide-sm ellipsis">{themeLabel(d)}</span>
               <span className="c-amt num" style={{ color: IVORY }}>{d.amt}</span>
               <span className="c-val hide-sm num ellipsis" style={{ color: v.estimated ? GRAY : GOLD }}>
                 {v.short}{v.estimated ? '*' : ''}
@@ -150,7 +164,7 @@ export function DetailPanel({ deal }: { deal: Deal | null }) {
     <div className="panel detail">
       <div className="detail-co">{deal.co}</div>
       <div className="detail-meta">
-        <span>{deal.mkt}</span><i>·</i><span>{deal.theme}</span><i>·</i><span>{deal.date}</span><i>·</i><span>{deal.round}</span>
+        <span>{deal.mkt}</span><i>·</i><span>{themeLabel(deal)}</span><i>·</i><span>{deal.date}</span><i>·</i><span>{deal.round}</span>
       </div>
       <div className="detail-figures">
         <div className="dfig">
