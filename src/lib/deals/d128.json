@@ -1,0 +1,30 @@
+{
+  "id": 128,
+  "co": "Seawolf Therapeutics",
+  "mkt": "US",
+  "date": "2026-11-16",
+  "round": "A轮",
+  "theme": "生物科技",
+  "amt": "$1亿",
+  "amtUSDm": 100,
+  "inv": [
+    "Versant Ventures",
+    "MPM BioImpact",
+    "Alexandria Venture Investments",
+    "Eli Lilly",
+    "CRISPR Therapeutics",
+    "Novartis Venture Fund"
+  ],
+  "investors": "创始投资方Versant Ventures领投，MPM BioImpact、Alexandria Venture Investments跟投，礼来、CRISPR Therapeutics、诺华风投参与；同日与赛诺菲达成多靶点合作+独家许可，里程碑最高$12亿",
+  "progress": "圣地亚哥公司，TRIDENT非病毒脂质纳米颗粒（LNP）平台递送工程化DNA，据称可实现重复给药、表达持续时间长于RNA药物；灵长类与小鼠代谢病/罕见病模型验证有效；核心管线聚焦增肌减脂（肥胖、肌肉流失、骨质疏松），目前仅动物实验阶段，计划2027年底选定候选药物、2028年底前申报人体试验",
+  "links": [
+    {
+      "label": "BioPharma Dive 2026-11-16",
+      "url": "https://www.biopharmadive.com/news/seawolf-therapeutics-dna-versant-startup-financing/874465/"
+    },
+    {
+      "label": "MedPath 2026-11-16",
+      "url": "https://trial.medpath.com/zh/news/seawolf-launches-with-100m-to-develop-non-viral-gene-therapies"
+    }
+  ]
+}

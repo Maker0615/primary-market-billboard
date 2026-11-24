@@ -1,0 +1,24 @@
+{
+  "id": 129,
+  "co": "Isomorphic Labs",
+  "mkt": "US",
+  "date": "2026-11-17",
+  "round": "C轮",
+  "theme": "AI制药",
+  "amt": "$50亿",
+  "amtUSDm": 5000,
+  "inv": [
+    "Greenoaks",
+    "Sequoia Capital",
+    "Andreessen Horowitz",
+    "Alphabet"
+  ],
+  "investors": "Greenoaks与红杉资本共同领投，a16z作为新投资者加入，母公司Alphabet继续大额投资，原有投资者全部跟投；此前2026年5月B轮$21亿、2025年3月首轮外部融资$6亿，三轮累计$77亿",
+  "progress": "2021年自Google DeepMind孵化，由DeepMind联合创始人戴密斯·哈萨比斯创立；药物设计引擎IsoDDE预测分子结合与成药性质，肿瘤、免疫学项目已取得积极临床前结果；与礼来（首付$4,500万+最高$17亿里程碑）、诺华（首付$3,750万+最高$12亿里程碑）达成研发合作；首批候选药物正推进人体试验；估值传闻约$500亿，公司未披露",
+  "links": [
+    {
+      "label": "观察者网 2026-11-19",
+      "url": "http://news.cyol.com/gb/keji/articles/2026-11/19/content_jpEX7vHeBd.html"
+    }
+  ]
+}

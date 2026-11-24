@@ -1,0 +1,25 @@
+{
+  "id": 130,
+  "co": "Vera Health",
+  "mkt": "US",
+  "date": "2026-10-27",
+  "round": "A轮",
+  "theme": "大健康",
+  "amt": "$2,850万",
+  "amtUSDm": 28.5,
+  "inv": [
+    "Threshold Ventures",
+    "Mantis VC",
+    "SV Angel",
+    "Y Combinator",
+    "Gradient"
+  ],
+  "investors": "Threshold Ventures领投$2,850万，Mantis VC、SV Angel参与，老股东Y Combinator、Gradient三倍加注；累计融资达$3,200万",
+  "progress": "旧金山临床AI工具，面向医生提供带证据等级标注的临床问答，覆盖6,000万+同行评议文献与临床指南；上线一年用户从数千增至80万+临床医生、覆盖190国，连续多月位居全球临床类应用下载榜前列；与美国急诊医师学会（ACEP）达成合作，平台对美国认证医生与医学生免费",
+  "links": [
+    {
+      "label": "Vera Health官方公告 2026-10-27",
+      "url": "https://www.verahealth.ai/fr/blog/vera-health-raises-32-million"
+    }
+  ]
+}
