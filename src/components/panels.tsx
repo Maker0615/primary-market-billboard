@@ -51,8 +51,8 @@ export function StatsPanel() {
 
 // ═══ 一级市场交易 ════════════════════════════════════════════════════════════
 // 一级分类页签 + AI4S 细分方向页签（AI制药并入 AI4S，不再单独成类）
-const THEME_TABS = ['全部', 'AI4S', '虚拟细胞', '生命科学本体', 'AI4AI', '生物科技', '大健康', '脑机接口'] as const;
-const SUB_DIR_TABS: readonly string[] = ['虚拟细胞', '生命科学本体'];
+const THEME_TABS = ['全部', 'AI4S', '虚拟细胞', 'AI4AI', 'Physical AI', '生物科技', '大健康', '脑机接口'] as const;
+const SUB_DIR_TABS: readonly string[] = ['虚拟细胞'];
 
 function matchThemeTab(d: Deal, f: string): boolean {
   if (f === '全部') return true;
@@ -77,15 +77,18 @@ export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
   }, []);
   const rows = useMemo(() => {
     let r = [...DEALS].sort((a, b) => b.date.localeCompare(a.date));
+    // 有搜索词时全库检索：忽略题材页签、市场与时间筛选，无需展开「更多」即可搜到全部样本
+    const q = query.trim().toLowerCase();
+    if (q) {
+      return r.filter((d) =>
+        d.co.toLowerCase().includes(q) || d.investors.toLowerCase().includes(q) ||
+        d.inv.some((n) => n.toLowerCase().includes(q)) || d.theme.includes(query.trim()) ||
+        (d.dir ?? '').includes(query.trim()) || (d.progress ?? '').includes(query.trim())
+      );
+    }
     if (filter !== '全部') r = r.filter((d) => matchThemeTab(d, filter));
     if (mkt !== '全部') r = r.filter((d) => d.mkt === mkt || d.mkt.includes(mkt));
     if (!showAll) r = r.filter((d) => d.date >= cutoff);
-    const q = query.trim().toLowerCase();
-    if (q) r = r.filter((d) =>
-      d.co.toLowerCase().includes(q) || d.investors.toLowerCase().includes(q) ||
-      d.inv.some((n) => n.toLowerCase().includes(q)) || d.theme.includes(query.trim()) ||
-      (d.dir ?? '').includes(query.trim())
-    );
     return r;
   }, [filter, mkt, showAll, cutoff, query]);
   const hiddenCount = useMemo(() => DEALS.filter((d) => d.date < cutoff).length, [cutoff]);
@@ -110,7 +113,7 @@ export function DealsPanel({ onSelect, selected, filter, setFilter, onList }: {
         {(['全部', 'CN', 'US'] as const).map((t) => (
           <button key={t} className={`tab ${mkt === t ? 'tab-on' : ''}`} onClick={() => setMkt(t)}>{t}</button>
         ))}
-        <span className="tabs-note">{rows.length} 笔 · 合计 ≈ ${(totalUSDmRows / 1000).toFixed(1)}B</span>
+        <span className="tabs-note">{query.trim() ? '全库搜索 · ' : ''}{rows.length} 笔 · 合计 ≈ ${(totalUSDmRows / 1000).toFixed(1)}B</span>
       </div>
       <div className="thead">
         <span className="c-date">日期</span><span className="c-co">公司</span>
