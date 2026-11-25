@@ -14,7 +14,7 @@
     "Khosla"
   ],
   "investors": "KP/Redpoint/Khosla领投",
-  "progress": "AI SRE agent：因果ML自动诊断软件故障",
+  "progress": "Traversal是AI站点可靠性工程（SRE）智能体公司，提供告警分流、事故根因分析、自愈与代码韧性等功能，基于生产世界模型与因果搜索自动诊断软件故障，支持Slack、Teams等渠道，并已推出正式版Traversal Workers。2026年11月宣布1.2亿美元B轮，投后估值10亿美元，由Kleiner Perkins、Redpoint与Khosla Ventures领投。",
   "links": [
     {
       "label": "TechStartups 2026-11-04",

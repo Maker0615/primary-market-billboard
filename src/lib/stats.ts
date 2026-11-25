@@ -70,7 +70,7 @@ export function byTheme(): Bucket[] {
   return [...m.values()].sort((a, b) => b.count - a.count || b.usdM - a.usdM);
 }
 
-// ③b AI4S 细分方向统计（AI制药 / 虚拟细胞 / 生命健康·医疗本体 / 泛科学智能）
+// ③b AI4S 细分方向统计（AI制药 / 虚拟细胞 / 生命科学本体 / 泛科学智能）
 export function byScienceDir(): Bucket[] {
   const m = new Map<string, Bucket>();
   for (const d of DEALS) {

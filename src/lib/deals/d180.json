@@ -13,7 +13,7 @@
     "Hearst Ventures"
   ],
   "investors": "Frist Cressey Ventures领投，FUSE/Hearst Ventures 跟投",
-  "progress": "员工健康福利AI",
+  "progress": "Avante是面向企业福利团队的AI平台，用AI代理解析福利计划文件、回答员工福利问题、支持开放注册季运营，客户包括三星、F5、SurveyMonkey等，并与经纪公司OneDigital达成合作。此前获Fuse领投的1000万美元种子轮，本轮3000万美元A轮由Frist Cressey Ventures领投。",
   "links": [
     {
       "label": "Avante 官方 2026-10",
@@ -22,5 +22,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $3,000万"
-  ]
+  ],
+  "site": "https://avante.ai"
 }

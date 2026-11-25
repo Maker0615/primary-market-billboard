@@ -13,7 +13,7 @@
     "Valtruis"
   ],
   "investors": "Valtruis领投，a16z/Foundry/CommonSpirit Ventures 跟投",
-  "progress": "医疗服务",
+  "progress": "Midstream Health是面向医疗系统财务可持续性的AI公司，帮助医院在供应链、药房与管理式医疗等环节发现成本优化空间并推动执行；官网媒体页提及休斯敦卫理公会、西奈山及CommonSpirit Health等医疗系统。本轮2000万美元A轮由Valtruis领投，a16z、Foundry、CommonSpirit Ventures参投。",
   "links": [
     {
       "label": "MedCity News 2026-11",
@@ -22,5 +22,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $2,000万"
-  ]
+  ],
+  "site": "https://midstream.health"
 }

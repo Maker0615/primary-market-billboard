@@ -12,7 +12,7 @@
     "Canvas Prime"
   ],
   "investors": "Canvas Ventures领投，Blank Ventures 跟投",
-  "progress": "医疗机构AI呼叫中心",
+  "progress": "Parakeet Health是医疗机构的AI患者接入平台，用语音AI代理处理预约、转诊与爽约挽回等前台沟通任务并写回EHR，服务皮肤科、眼科等专科诊所；官网称约40%来电无需人工处理，已与全国性皮肤科集团QualDerm合作，本轮1000万美元A轮由Canvas Ventures领投。",
   "links": [
     {
       "label": "The SaaS News 2026-10",
@@ -21,5 +21,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $1,000万"
-  ]
+  ],
+  "site": "https://parakeethealth.com"
 }

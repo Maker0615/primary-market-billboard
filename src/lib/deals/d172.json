@@ -11,7 +11,7 @@
     "Nava Ventures"
   ],
   "investors": "Nava Ventures领投(Gradient/微软AI CEO Suleyman个人)",
-  "progress": "模拟工作环境训练+评估企业AI agent",
+  "progress": "Plato（Plato Technologies）位于旧金山，为企业AI agent构建模拟工作环境：复刻真实岗位所用工具、软件与流程，供模型在其中训练与评测，已发布Computer Work Val、Web Clone Bench等基准。本轮A轮1600万美元由Nava Ventures领投，Gradient及微软AI CEO Suleyman个人参投，累计融资1900万美元。",
   "links": [
     {
       "label": "TechStartups 2026-10-29",
@@ -20,5 +20,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $1,600万"
-  ]
+  ],
+  "site": "https://plato.so"
 }

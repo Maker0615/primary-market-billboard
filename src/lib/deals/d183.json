@@ -12,7 +12,7 @@
     "Savant Growth"
   ],
   "investors": "Savant Growth领投，Kennet Partners 跟投",
-  "progress": "AI医疗编码/收入周期",
+  "progress": "XpertDox是AI医疗编码公司，其XpertCoding平台用自然语言处理技术从门诊病历自动生成ICD/CPT编码，主攻紧急护理、初级保健、儿科及社区健康中心等场景，客户含Camarena Health等。本轮2000万美元A轮由Savant Growth领投、Kennet Partners参投。",
   "links": [
     {
       "label": "XpertDox 官方",
@@ -21,5 +21,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $2,000万"
-  ]
+  ],
+  "site": "https://xpertdox.com"
 }

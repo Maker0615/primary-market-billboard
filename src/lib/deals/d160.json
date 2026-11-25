@@ -11,7 +11,7 @@
     "Standard Capital"
   ],
   "investors": "Standard Capital领投(YC)",
-  "progress": "跨芯片AI推理编译器",
+  "progress": "Luminal是AI推理编译器与推理云服务公司，自研编译器将模型预先编译为GPU/ASIC原生代码，支持NVIDIA、AMD GPU及AWS Trainium、Positron等ASIC，统一API自动跨芯片调度请求；同时运营Luminal Cloud推理API（已上线DeepSeek、Ideogram等模型）并开源编译器。本轮2500万美元A轮由Standard Capital领投，为YC孵化公司。",
   "links": [
     {
       "label": "TechStartups 2026-11-13",

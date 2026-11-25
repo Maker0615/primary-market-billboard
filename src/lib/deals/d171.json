@@ -10,7 +10,7 @@
   "val": "投后约$10亿",
   "inv": [],
   "investors": "未披露",
-  "progress": "为OpenAI/Anthropic等提供AI agent沙箱",
+  "progress": "Daytona为AI agent提供安全沙箱基础设施，让模型生成代码在隔离环境运行，客户包括OpenAI、Anthropic等，并与Cursor、LangChain、Stripe等工具集成。2026年10月完成6000万美元融资（投后10亿美元），此前A轮2400万美元；公司称年化收入四个季度内从100万美元增至1亿美元。",
   "links": [
     {
       "label": "TechStartups 2026-10-20",
@@ -19,5 +19,6 @@
   ],
   "hist": [
     "2026 路 未披露 路 $6,000万@投后$10亿"
-  ]
+  ],
+  "site": "https://www.daytona.io"
 }

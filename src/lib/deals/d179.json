@@ -9,7 +9,7 @@
   "amtUSDm": 31,
   "inv": [],
   "investors": "Oak HC/FT领投",
-  "progress": "医疗系统临床运营/排班优化",
+  "progress": "Vitalize是一家医疗系统运营优化公司，用数据平台与自动化工具帮助医院管理临床排班与人力配置，目标是释放医疗系统既有服务产能。本轮3100万美元A轮由Oak HC/FT领投；其技术博客显示工程团队围绕数据基础设施与AI编码工具持续投入，公司处于产品落地与市场扩张阶段。",
   "links": [
     {
       "label": "Business Wire 2026-10-06",
@@ -18,5 +18,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $3,100万"
-  ]
+  ],
+  "site": "https://vitalize.care"
 }

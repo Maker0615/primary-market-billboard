@@ -14,7 +14,7 @@
     "DFJ Growth"
   ],
   "investors": "a16z/8VC/DFJ Growth等",
-  "progress": "AI抗体设计",
+  "progress": "BigHat Biosciences是临床阶段生物科技公司，Milliner平台将AI抗体设计与高通量自动化湿实验结合，每周可设计并表征数千个抗体；管线BHB810（靶向CDH17的ADC）已进I期临床并完成首例给药，并与Anthropic等合作。本轮7500万美元C轮，累计融资2.23亿美元。",
   "links": [
     {
       "label": "BigHat 官网 2026-09-24",
@@ -23,5 +23,6 @@
   ],
   "hist": [
     "2026 路 C轮 路 $7,500万"
-  ]
+  ],
+  "site": "https://bighatbio.com"
 }

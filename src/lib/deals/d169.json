@@ -9,7 +9,7 @@
   "amtUSDm": 145,
   "inv": [],
   "investors": "未完全披露(Nvidia-backed)",
-  "progress": "吉瓦级AI光互连",
+  "progress": "CScale 2023年成立于美国帕洛阿尔托，研发吉瓦级AI数据中心scale-up光互连，以架构设计在光器件故障时保障计算连续。CEO Martin Lund曾负责博通交换芯片业务，CTO Sanjai Kohli为SiRF创始人。本轮1.45亿美元由Atreides领投，NVIDIA、Intel Capital参投，累计融资1.88亿美元。",
   "links": [
     {
       "label": "TechStartups 2026-09-30",
@@ -18,5 +18,6 @@
   ],
   "hist": [
     "2026 路 未披露 路 $1.45亿"
-  ]
+  ],
+  "site": "https://www.cscale.ai"
 }

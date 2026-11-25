@@ -11,7 +11,7 @@
     "Walden Catalyst"
   ],
   "investors": "Walden Catalyst(英特尔CEO陈立武系)领投",
-  "progress": "全球分布式GPU算力网格",
+  "progress": "Hyperbolic运营分布式GPU算力市场，将全球分散的异构GPU算力聚合为统一平台，提供按需GPU实例、托管Kubernetes与模型推理服务，称服务超25万名开发者，官网展示客户包括Pika、HeyGen等。本轮3000万美元融资由Walden Catalyst（英特尔CEO陈立武系）领投。",
   "links": [
     {
       "label": "TechStartups 2026-10-27",
@@ -20,5 +20,6 @@
   ],
   "hist": [
     "2026 路 未披露 路 $3,000万"
-  ]
+  ],
+  "site": "https://hyperbolic.ai"
 }

@@ -11,7 +11,7 @@
     "深创投"
   ],
   "investors": "深创投等",
-  "progress": "RISC-V服务器CPU融合AI推理（LX500，联想整机）",
+  "progress": "BlueCore Compute研发基于RISC-V开源指令集的服务器CPU，将AI推理能力融合进通用处理器（LX500），并与联想合作推出整机；RISC-V开放架构支持自主扩展与定制加速，面向国产化服务器与推理算力市场。本轮约20亿元B轮由深创投等投资。",
   "links": [
     {
       "label": "TechStartups 2026-10-12",

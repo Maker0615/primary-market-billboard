@@ -51,8 +51,8 @@ export function StatsPanel() {
 
 // ═══ 一级市场交易 ════════════════════════════════════════════════════════════
 // 一级分类页签 + AI4S 细分方向页签（AI制药并入 AI4S，不再单独成类）
-const THEME_TABS = ['全部', 'AI4S', '虚拟细胞', '生命健康·医疗本体', 'AI4AI', '生物科技', '大健康', '脑机接口'] as const;
-const SUB_DIR_TABS: readonly string[] = ['虚拟细胞', '生命健康·医疗本体'];
+const THEME_TABS = ['全部', 'AI4S', '虚拟细胞', '生命科学本体', 'AI4AI', '生物科技', '大健康', '脑机接口'] as const;
+const SUB_DIR_TABS: readonly string[] = ['虚拟细胞', '生命科学本体'];
 
 function matchThemeTab(d: Deal, f: string): boolean {
   if (f === '全部') return true;

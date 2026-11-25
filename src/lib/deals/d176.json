@@ -9,7 +9,7 @@
   "amtUSDm": 55,
   "inv": [],
   "investors": "Insight Partners领投",
-  "progress": "AI病历审查（风险调整/RCC）",
+  "progress": "Charta Health开发AI病历审查平台，在账单生成前自动核查编码、发现漏收与文档缺口，覆盖自主编码、收入发现、付款方合规与HCC风险调整等场景，服务医疗机构与保险公司。本轮5500万美元B轮由Insight Partners领投。",
   "links": [
     {
       "label": "Charta Health 官方",
@@ -18,5 +18,6 @@
   ],
   "hist": [
     "2026 路 B轮 路 $5,500万"
-  ]
+  ],
+  "site": "https://chartahealth.com"
 }

@@ -12,7 +12,7 @@
     "Maverick"
   ],
   "investors": "Headline领投（待复核），Arthur Ventures/Maverick 跟投",
-  "progress": "医疗AI文书/护理协调",
+  "progress": "Clarity Care AI面向健康险公司与第三方管理机构（TPA），提供名为Electra的AI代理，在利用管理、事先授权、临床审核、付款诚信等环节自动完成收件、证据核对与决定信函生成，内置CMS合规与审计追踪。公司称累计融资约2000万美元（含本轮约1630万美元A轮），已通过SOC 2 Type II认证。",
   "links": [
     {
       "label": "FireRound 跟踪",
@@ -21,5 +21,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $1,630万"
-  ]
+  ],
+  "site": "https://claritycare.ai"
 }

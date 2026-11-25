@@ -14,7 +14,7 @@
     "Uncork"
   ],
   "investors": "NEA领投，SignalFire/Frist Cressey/Uncork 跟投",
-  "progress": "医疗AI护理协调/临床运营",
+  "progress": "Knit Health是面向医疗系统的临床智能公司，其核心模型Med-BEAM基于数亿患者记录中的真实临床决策训练，为医疗机构提供全院级患者编排，把患者引导至合适的医生与时机，并向开发者输出有真实结局支撑的临床推理能力。本轮3500万美元A轮由NEA领投；产品已通过HIPAA与SOC 2认证，创始团队含医学与数据科学背景学者。",
   "links": [
     {
       "label": "citybiz 2026-11",
@@ -23,5 +23,6 @@
   ],
   "hist": [
     "2026 路 A轮 路 $3,500万"
-  ]
+  ],
+  "site": "https://knit.health"
 }
